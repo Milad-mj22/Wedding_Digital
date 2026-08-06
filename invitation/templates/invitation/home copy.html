@@ -1,0 +1,416 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوتنامه عروسی {{ invitation.bride_name }} و {{ invitation.groom_name }}</title>
+    <!-- فونت‌های گوگل -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- بوت‌استرپ ۵ (RTL) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --soft-pink: #f9f3f0;
+            --dark: #2c2c2c;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--soft-pink);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .fancy {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* هدر تمام‌صفحه */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('{% if invitation.photo_main %}{{ invitation.photo_main.url }}{% else %}https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070{% endif %}') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            z-index: 2;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 1rem;
+        }
+
+        .hero .date {
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding: 0.5rem 2rem;
+            margin: 1.5rem 0;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: white;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* بخش‌های عمومی */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto;
+        }
+
+        /* تایمر شمارش معکوس */
+        .countdown {
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* داستان عشق */
+        .story-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        /* محل برگزاری */
+        .venue-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        /* فرم RSVP */
+        .rsvp-form {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .rsvp-form .form-check-label {
+            margin-right: 0.5rem;
+        }
+
+        /* گلبرگ‌های رقصان */
+        #petals-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* فوتر */
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .date {
+                font-size: 1.5rem;
+                padding: 0.3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- بوم گلبرگ -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- هیرو -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>{{ invitation.bride_name }} <span style="color: var(--gold);">&amp;</span> {{ invitation.groom_name }}</h1>
+            <div class="date">
+                {{ invitation.wedding_date|date:"Y/m/d" }} · ساعت {{ invitation.wedding_date|date:"H:i" }}
+            </div>
+            <p class="lead mt-4">با حضور گرمتان، زندگی ما را زیباتر کنید</p>
+        </div>
+        <div class="scroll-down">⌄</div>
+    </header>
+
+    <!-- تایمر شمارش معکوس -->
+    <section class="section" id="countdown-section">
+        <div class="container">
+            <h2 class="section-title">تا شروع جشن</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><span class="countdown-number" id="days">00</span><br>روز</div>
+                <div class="countdown-item"><span class="countdown-number" id="hours">00</span><br>ساعت</div>
+                <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><br>دقیقه</div>
+                <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><br>ثانیه</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- داستان عشق -->
+    {% if invitation.love_story %}
+    <section class="section bg-white">
+        <div class="container">
+            <h2 class="section-title">داستان عشق ما</h2>
+            <div class="story-text">
+                {{ invitation.love_story|linebreaks }}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- اطلاعات مراسم -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">جزئیات مراسم</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="venue-card">
+                        <h4 style="color: var(--gold);">📅 {{ invitation.wedding_date|date:"l j F Y" }}</h4>
+                        <p class="mt-2">ساعت {{ invitation.wedding_date|date:"H:i" }}</p>
+                        <hr>
+                        <h5>{{ invitation.venue }}</h5>
+                        <p>{{ invitation.address }}</p>
+                        {% if invitation.map_embed %}
+                        <div class="map-container mt-3">
+                            {{ invitation.map_embed|safe }}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فرم پاسخ به دعوت -->
+    <section class="section bg-white" id="rsvp">
+        <div class="container">
+            <h2 class="section-title">آیا شما را ملاقات خواهیم کرد؟</h2>
+            <div class="rsvp-form">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}success{% endif %} text-center">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="نام و نام خانوادگی" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="ایمیل شما" required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" name="attending" class="form-check-input" id="attending" checked>
+                        <label class="form-check-label" for="attending">با کمال میل شرکت می‌کنم</label>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="3" placeholder="پیام تبریک (اختیاری)"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lg w-100" style="background-color: var(--gold); color: white; font-weight: bold;">
+                        ارسال پاسخ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        با عشق، {{ invitation.bride_name }} و {{ invitation.groom_name }} | ساخته شده با جنگو و کمی جادوی پینترستی ✨
+    </footer>
+
+    <!-- اسکریپت‌ها -->
+    <script>
+        // تایمر شمارش معکوس
+        const weddingDate = new Date("{{ invitation.wedding_date|date:'Y-m-d' }}T{{ invitation.wedding_date|time:'H:i:s' }}").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h3>ما ازدواج کردیم! 🎉</h3>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+        }, 1000);
+
+        // انیمیشن گلبرگ‌های صورتی (حس پینترستی)
+        const canvas = document.getElementById('petals-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const petals = [];
+        const petalCount = 20;
+
+        class Petal {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * -canvas.height;
+                this.size = Math.random() * 12 + 6;
+                this.speedY = Math.random() * 1.5 + 0.8;
+                this.speedX = Math.random() * 0.6 - 0.3;
+                this.opacity = Math.random() * 0.6 + 0.3;
+                this.rotation = Math.random() * 360;
+                this.rotSpeed = Math.random() * 2 - 1;
+                // رنگ صورتی ملایم یا طلایی
+                const colors = ['#f8bbd0', '#f48fb1', '#fce4ec', '#ffe0b2', '#fff9c4'];
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX + Math.sin(this.y * 0.02) * 0.3;
+                this.rotation += this.rotSpeed;
+                if (this.y > canvas.height + 50) {
+                    this.reset();
+                    this.y = -50;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate((this.rotation * Math.PI) / 180);
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                // شکل گلبرگ ساده (بیضی)
+                ctx.beginPath();
+                ctx.ellipse(0, 0, this.size * 0.7, this.size * 0.4, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        for (let i = 0; i < petalCount; i++) {
+            petals.push(new Petal());
+        }
+
+        function animatePetals() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petals.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animatePetals);
+        }
+        animatePetals();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>

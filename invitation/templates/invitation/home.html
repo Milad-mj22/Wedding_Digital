@@ -1,0 +1,863 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوتنامه عروسی {{ invitation.bride_name }} و {{ invitation.groom_name }}</title>
+    
+    <!-- فونت‌ها -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    
+    <style>
+        /* ========== متغیرها ========== */
+        :root {
+            --gold: #c9a96e;
+            --gold-light: #e0cfa2;
+            --blush: #f2d9d9;
+            --soft-bg: #fefaf6;
+            --dark: #3a3a3a;
+            --white: #ffffff;
+            --glass-bg: rgba(255,255,255,0.7);
+            --glass-border: rgba(255,255,255,0.4);
+            --shadow: 0 15px 40px rgba(0,0,0,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: var(--soft-bg);
+            color: var(--dark);
+            line-height: 1.9;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* ========== PRELOADER ========== */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--soft-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+        #preloader .heart {
+            font-size: 3rem;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.7; }
+        }
+
+        /* ========== STAMP SCREEN ========== */
+        #stamp-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: var(--soft-bg) url('{% static "invitation/images/stamp-bg.jpg" %}') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9000;
+            transition: opacity 0.6s ease, visibility 0.6s;
+            cursor: pointer;
+            background-blend-mode: overlay;
+            background-color: rgba(254,250,246,0.85);
+        }
+        .stamp {
+            text-align: center;
+            animation: floatStamp 3s ease-in-out infinite;
+        }
+        .stamp-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 0 12px rgba(201,169,110,0.2), 0 0 0 24px rgba(201,169,110,0.1);
+            position: relative;
+        }
+        .stamp-circle::after {
+            content: '';
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 2px dashed var(--gold-light);
+            opacity: 0.7;
+        }
+        .stamp-icon {
+            font-size: 4rem;
+            z-index: 2;
+        }
+        .stamp-text {
+            font-size: 1.8rem;
+            color: var(--dark);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        .stamp-sub {
+            font-size: 1rem;
+            color: var(--gold);
+            margin-top: 0.5rem;
+        }
+
+        @keyframes floatStamp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ========== VIDEO SCREEN ========== */
+        #video-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #000;
+            z-index: 9500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        #video-screen.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        #video-screen video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0; left: 0;
+        }
+        .skip-btn {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.25);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        .skip-btn:hover {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        /* ========== HERO PARALLAX ========== */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: #000;
+        }
+        .hero-bg {
+            position: absolute;
+            top: -20px; left: -20px;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            background: url('{% if invitation.photo_main %}{{ invitation.photo_main.url }}{% else %}https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070{% endif %}') center/cover no-repeat;
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.8s ease;
+            padding: 2rem 3rem;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.3);
+            max-width: 800px;
+            margin: 0 1rem;
+        }
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            text-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+        .hero .date {
+            font-size: 2rem;
+            font-weight: 300;
+            border-top: 1px solid var(--gold-light);
+            border-bottom: 1px solid var(--gold-light);
+            display: inline-block;
+            padding: 0.6rem 2.5rem;
+            margin: 2rem 0 1rem;
+            letter-spacing: 3px;
+            backdrop-filter: blur(6px);
+            background: rgba(255,255,255,0.08);
+            border-radius: 8px;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            color: white;
+            opacity: 0.8;
+            z-index: 5;
+        }
+
+        /* ========== SECTIONS GENERAL ========== */
+        .section { padding: 6rem 0; position: relative; }
+        .section-title {
+            font-size: 2.8rem; font-weight: 700; color: var(--gold);
+            text-align: center; margin-bottom: 4rem; position: relative;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 2px;
+            background: var(--gold-light); margin: 1.2rem auto 0;
+        }
+
+        /* ========== COUNTDOWN (normal) ========== */
+        .countdown-wrapper { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+        .countdown-item {
+            text-align: center; min-width: 100px;
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border); border-radius: 24px;
+            padding: 2rem 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s;
+        }
+        .countdown-item:hover { transform: translateY(-6px); }
+        .countdown-number {
+            font-family: 'Vazirmatn', sans-serif; font-size: 3.8rem;
+            font-weight: 700; color: var(--gold); display: block; line-height: 1;
+            animation: countPulse 2s infinite;
+        }
+        @keyframes countPulse {
+            0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); }
+        }
+        .countdown-label { font-size: 1rem; color: #888; margin-top: 0.5rem; letter-spacing: 1px; }
+
+        /* ========== SCRATCH COUNTDOWN ========== */
+        .scratch-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            background: white;
+        }
+        .scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            touch-action: none;
+            z-index: 10;
+            border-radius: 24px;
+        }
+        .scratch-canvas:active {
+            cursor: grabbing;
+        }
+        .scratch-hint {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            z-index: 11;
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            animation: hintPulse 2s infinite;
+        }
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* ========== TIMELINE ========== */
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; bottom: 0; right: 50%;
+            width: 2px; background: var(--gold-light); transform: translateX(50%);
+        }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 4rem; }
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 30px); }
+        .timeline-dot {
+            position: absolute; right: 50%; top: 20px; width: 18px; height: 18px;
+            background: var(--gold); border-radius: 50%; border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--gold-light); transform: translateX(50%); z-index: 2;
+        }
+        .timeline-content { background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow); width: 100%; max-width: 380px; }
+        .timeline-date { color: var(--gold); font-weight: 700; margin-bottom: 0.8rem; font-size: 1.2rem; }
+
+        /* ========== GALLERY ========== */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 0 1rem; }
+        .gallery-item { border-radius: 16px; overflow: hidden; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.4s; }
+        .gallery-item:hover { transform: scale(1.03); }
+        .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 10001; visibility: hidden; opacity: 0; transition: 0.3s; }
+        .lightbox.active { visibility: visible; opacity: 1; }
+        .lightbox img { max-width: 90%; max-height: 80vh; border-radius: 12px; }
+        .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 2.5rem; cursor: pointer; }
+
+        /* ========== BRIDE & GROOM ========== */
+        .couple-card { background: white; border-radius: 24px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow); }
+        .couple-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold-light); margin-bottom: 1.5rem; }
+
+        /* ========== MUSIC BUTTON ========== */
+        .music-btn { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold); cursor: pointer; z-index: 9998; box-shadow: 0 8px 25px rgba(0,0,0,0.12); transition: all 0.3s; }
+        .music-btn:hover { background: var(--gold); color: white; }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top { position: fixed; bottom: 100px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer; z-index: 9998; opacity: 0; transform: translateY(20px); transition: all 0.4s; box-shadow: 0 8px 25px rgba(201,169,110,0.4); }
+        .back-to-top.show { opacity: 1; transform: translateY(0); }
+
+        /* ========== RSVP ========== */
+        .rsvp-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border-radius: 28px; padding: 3rem; box-shadow: var(--shadow); max-width: 650px; margin: 0 auto; border: 1px solid var(--glass-border); }
+        .btn-gold { background: var(--gold); color: white; border: none; padding: 1rem; border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s; }
+        .btn-gold:hover { background: #b28b4b; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(201,169,110,0.4); }
+
+        /* ========== PETALS ========== */
+        #petals-canvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events: none; z-index: 9999; }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero-content { padding: 1.5rem; }
+            .countdown-number { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .timeline::before { right: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { padding-left: 0; padding-right: 50px; justify-content: flex-start; }
+            .timeline-dot { right: 20px; }
+            .timeline-content { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="preloader"><div class="heart">💖</div></div>
+
+    <!-- ==================== STAMP SCREEN ==================== -->
+    <div id="stamp-screen">
+        <div class="stamp">
+            <div class="stamp-circle">
+                <span class="stamp-icon">💌</span>
+            </div>
+            <div class="stamp-text">برای گشودن دعوتنامه لمس کنید</div>
+            <div class="stamp-sub">یک سورپرایز کوچک در انتظار شماست ✨</div>
+        </div>
+    </div>
+
+    <!-- ==================== VIDEO SCREEN ==================== -->
+    <div id="video-screen">
+        <video id="intro-video" muted playsinline>
+            <source src="{% static 'invitation/video/intro.mp4' %}" type="video/mp4">
+            مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+        </video>
+        <div class="skip-btn" id="skip-video">رد کردن ویدئو ←</div>
+    </div>
+
+    <!-- ==================== MAIN INVITATION ==================== -->
+    <div id="invitation" style="display:none;">
+
+        <!-- MUSIC & BACK TO TOP -->
+        <audio id="bg-music" loop>
+            <source src="{% static 'invitation/music/wedding.mp3' %}" type="audio/mpeg">
+        </audio>
+        <div class="music-btn" id="musicToggle" title="پخش/توقف موسیقی">🎵</div>
+        <div class="back-to-top" id="backToTop">↑</div>
+        <canvas id="petals-canvas"></canvas>
+
+        <!-- HERO -->
+        <header class="hero" id="hero">
+            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <h1>{{ invitation.groom_name }} <span style="color: var(--gold-light); font-size: 3rem;">&</span> {{ invitation.bride_name }}</h1>
+                <div class="date">{{ invitation.wedding_date|date:"Y / m / d" }}  ·  ساعت {{ invitation.wedding_date|date:"H:i" }}</div>
+                <p style="font-weight: 300; font-size: 1.3rem; margin-top: 1.5rem;">با حضورتان، زندگی‌مان را جاودانه کنید</p>
+            </div>
+            <div class="scroll-indicator">↓</div>
+        </header>
+
+        <!-- COUNTDOWN with Scratch -->
+        <section class="section" style="background: #fff; position: relative;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">شمارش معکوس تا زیباترین روز</h2>
+                <div class="scratch-container" data-aos="zoom-in">
+                    <!-- اعداد اصلی (زیر لایه) -->
+                    <div class="countdown-wrapper" id="countdown">
+                        <div class="countdown-item"><span class="countdown-number" id="days">00</span><span class="countdown-label">روز</span></div>
+                        <div class="countdown-item"><span class="countdown-number" id="hours">00</span><span class="countdown-label">ساعت</span></div>
+                        <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">دقیقه</span></div>
+                        <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">ثانیه</span></div>
+                    </div>
+                    <!-- Canvas اسکرچ (لایه رویی) -->
+                    <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+                    <!-- راهنما -->
+                    <div class="scratch-hint">✨ برای دیدن شمارش معکوس، این قسمت را بتراشید ✨</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRIDE & GROOM -->
+        <section class="section" style="background: #fdf8f3;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">عروس و داماد</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-5" data-aos="fade-right">
+                        <div class="couple-card">
+                            <!-- <img src="{% static 'invitation/images/groom.jpg' %}" alt="داماد" class="couple-img" onerror="this.src='https://via.placeholder.com/150?text=داماد'"> -->
+                            <h4>{{ invitation.groom_name }}</h4>
+                            <p class="text-muted">پسری از تبار عشق، همیشه در جست‌وجوی نیمه‌ی گمشده.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5" data-aos="fade-left">
+                        <div class="couple-card">
+                            <!-- <img src="{% static 'invitation/images/bride.jpg' %}" alt="عروس" class="couple-img" onerror="this.src='https://via.placeholder.com/150?text=عروس'"> -->
+                            <h4>{{ invitation.bride_name }}</h4>
+                            <p class="text-muted">دختری با قلبی به‌بزرگی دریا، که عشق را معنا می‌بخشد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR STORY TIMELINE -->
+        {% if invitation.love_story %}
+        <section class="section" style="background: #fff;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">داستان عشق ما</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">نخستین نگاه</div>
+                            <p>همه‌چیز از یک نگاه ساده شروع شد، نگاهی که دنیا را برایمان تغییر داد.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">امروز</div>
+                            <p>{{ invitation.love_story|truncatewords:40 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- PHOTO GALLERY -->
+        <section class="section" style="background: #fdf8f3;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">گالری خاطرات</h2>
+                <div class="gallery-grid" id="gallery">
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600" alt="عکس ۱"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="عکس ۲"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600" alt="عکس ۳"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=600" alt="عکس ۴"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT DETAILS -->
+        <section class="section" style="background: #fff;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">مراسم</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="couple-card">
+                            <h4 style="color: var(--gold);">📅 {{ invitation.wedding_date|date:"l j F Y" }}</h4>
+                            <p class="lead">ساعت {{ invitation.wedding_date|date:"H:i" }}</p>
+                            <hr style="width: 50px; margin: 1.5rem auto; border-top: 2px solid var(--gold-light);">
+                            <h5>{{ invitation.venue }}</h5>
+                            <p class="text-muted">{{ invitation.address }}</p>
+                            {% if invitation.map_embed %}
+                            <div class="mt-4 rounded-4 overflow-hidden shadow-sm">{{ invitation.map_embed|safe }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <section class="section" style="background: #fdf8f3;" id="rsvp">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">پاسخ به دعوت</h2>
+                <div class="rsvp-card" data-aos="zoom-in">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}success{% endif %} text-center rounded-4">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="نام" required>
+                            <label for="name">نام و نام خانوادگی</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="ایمیل" required>
+                            <label for="email">ایمیل</label>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" name="attending" id="attending" checked>
+                            <label class="form-check-label" for="attending">با کمال میل شرکت می‌کنم</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <textarea class="form-control" id="message" name="message" style="height: 120px" placeholder="پیام"></textarea>
+                            <label for="message">پیام تبریک (اختیاری)</label>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 py-3">ارسال پاسخ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-5" style="background: #2c2c2c; color: #ccc;">
+            <p class="mb-2">با عشق، <span style="color: var(--gold-light);">{{ invitation.bride_name }} و {{ invitation.groom_name }}</span></p>
+            <small>ساخته‌شده با جنگو و کلی حس خوب ✨</small>
+        </footer>
+    </div> <!-- end #invitation -->
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" id="lightboxImg">
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // ========== PRELOADER ==========
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.opacity = '0';
+            document.getElementById('preloader').style.visibility = 'hidden';
+        });
+
+        // ========== FLOW: STAMP -> VIDEO -> INVITATION ==========
+        const stampScreen = document.getElementById('stamp-screen');
+        const videoScreen = document.getElementById('video-screen');
+        const video = document.getElementById('intro-video');
+        const skipBtn = document.getElementById('skip-video');
+        const invitationDiv = document.getElementById('invitation');
+        const bgMusic = document.getElementById('bg-music');
+        let musicPlaying = false;
+
+        function showInvitation() {
+            videoScreen.classList.remove('active');
+            invitationDiv.style.display = 'block';
+            AOS.refresh();
+            initScratch();        // راه‌اندازی اسکرچ
+            startCountdown();
+            startPetals();
+            if (!musicPlaying) {
+                bgMusic.play().catch(() => console.log('Autoplay blocked'));
+                musicPlaying = true;
+                document.getElementById('musicToggle').innerHTML = '🔊';
+            }
+        }
+
+        stampScreen.addEventListener('click', () => {
+            stampScreen.style.opacity = '0';
+            stampScreen.style.visibility = 'hidden';
+            videoScreen.classList.add('active');
+            video.play().catch(e => console.log('Video play failed:', e));
+        });
+
+        video.addEventListener('ended', showInvitation);
+        skipBtn.addEventListener('click', () => {
+            video.pause();
+            showInvitation();
+        });
+        video.addEventListener('error', () => {
+            console.warn('Video failed to load, skipping.');
+            showInvitation();
+        });
+
+        // ========== COUNTDOWN TIMER ==========
+        let countdownInterval;
+        function startCountdown() {
+            const weddingDate = new Date("{{ invitation.wedding_date|date:'Y-m-d' }}T{{ invitation.wedding_date|time:'H:i:s' }}").getTime();
+            countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("countdown").innerHTML = '<div class="countdown-item" style="grid-column:1/-1"><h3 style="color:var(--gold);">ما ازدواج کردیم! 🎉</h3></div>';
+                    return;
+                }
+                document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+            }, 1000);
+        }
+
+        // ========== SCRATCH CARD ==========
+        let scratchCanvas, scratchCtx;
+        let isScratching = false;
+        const scratchRadius = 35;
+
+        function initScratch() {
+            scratchCanvas = document.getElementById('scratch-canvas');
+            if (!scratchCanvas) return;
+            
+            const container = scratchCanvas.parentElement;
+            scratchCtx = scratchCanvas.getContext('2d');
+            
+            resizeScratchCanvas();
+            window.addEventListener('resize', resizeScratchCanvas);
+            
+            drawScratchCover();
+            
+            scratchCanvas.addEventListener('mousedown', startScratch);
+            scratchCanvas.addEventListener('mousemove', scratch);
+            window.addEventListener('mouseup', stopScratch);
+            
+            scratchCanvas.addEventListener('touchstart', startScratch, { passive: false });
+            scratchCanvas.addEventListener('touchmove', scratch, { passive: false });
+            window.addEventListener('touchend', stopScratch);
+            window.addEventListener('touchcancel', stopScratch);
+        }
+
+        function resizeScratchCanvas() {
+            if (!scratchCanvas) return;
+            const container = scratchCanvas.parentElement;
+            const rect = container.getBoundingClientRect();
+            scratchCanvas.width = rect.width;
+            scratchCanvas.height = rect.height;
+            drawScratchCover();
+        }
+
+        function drawScratchCover() {
+            if (!scratchCtx) return;
+            const w = scratchCanvas.width;
+            const h = scratchCanvas.height;
+            
+            const gradient = scratchCtx.createLinearGradient(0, 0, w, h);
+            gradient.addColorStop(0, '#f5e7d3');
+            gradient.addColorStop(0.5, '#e8cfaa');
+            gradient.addColorStop(1, '#d4b68a');
+            scratchCtx.fillStyle = gradient;
+            scratchCtx.fillRect(0, 0, w, h);
+            
+            scratchCtx.fillStyle = 'rgba(201,169,110,0.2)';
+            for (let i = 0; i < 100; i++) {
+                const x = Math.random() * w;
+                const y = Math.random() * h;
+                scratchCtx.beginPath();
+                scratchCtx.arc(x, y, 1, 0, Math.PI * 2);
+                scratchCtx.fill();
+            }
+            
+            scratchCtx.fillStyle = 'rgba(160,120,70,0.7)';
+            scratchCtx.font = 'bold 1.8rem Vazirmatn';
+            scratchCtx.textAlign = 'center';
+            scratchCtx.fillText('✨ بتراشید ✨', w/2, h/2);
+        }
+
+        function getEventPos(e) {
+            const rect = scratchCanvas.getBoundingClientRect();
+            if (e.touches) {
+                return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+            }
+            return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        }
+
+        function startScratch(e) {
+            e.preventDefault();
+            isScratching = true;
+            scratch(getEventPos(e));
+        }
+
+        function scratch(e) {
+            if (!isScratching) return;
+            e.preventDefault();
+            const pos = getEventPos(e);
+            
+            scratchCtx.globalCompositeOperation = 'destination-out';
+            scratchCtx.beginPath();
+            scratchCtx.arc(pos.x, pos.y, scratchRadius, 0, Math.PI * 2);
+            scratchCtx.fill();
+            scratchCtx.globalCompositeOperation = 'source-over';
+            
+            checkRevealPercent();
+        }
+
+        function stopScratch() {
+            isScratching = false;
+        }
+
+        function checkRevealPercent() {
+            if (!scratchCtx || !scratchCanvas) return;
+            const imageData = scratchCtx.getImageData(0, 0, scratchCanvas.width, scratchCanvas.height);
+            const pixels = imageData.data;
+            let transparentPixels = 0;
+            const totalPixels = pixels.length / 4;
+            
+            for (let i = 3; i < pixels.length; i += 4) {
+                if (pixels[i] === 0) transparentPixels++;
+            }
+            
+            const percent = (transparentPixels / totalPixels) * 100;
+            
+            if (percent > 50) {
+                scratchCtx.clearRect(0, 0, scratchCanvas.width, scratchCanvas.height);
+                const hint = document.querySelector('.scratch-hint');
+                if (hint) hint.style.display = 'none';
+            }
+        }
+
+        // ========== PETALS ==========
+        function startPetals() {
+            const canvas = document.getElementById('petals-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const petals = [];
+            class Petal {
+                constructor() { this.reset(); }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * -canvas.height;
+                    this.size = Math.random() * 18 + 8;
+                    this.speedY = Math.random() * 2 + 0.5;
+                    this.speedX = Math.random() * 0.8 - 0.4;
+                    this.opacity = Math.random() * 0.5 + 0.4;
+                    this.rotation = Math.random() * 360;
+                    this.rotSpeed = Math.random() * 2 - 1;
+                    const colors = ['#f7d1d1','#f2b5b5','#fce4ec','#ffe0b2','#f8e8d0'];
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX + Math.sin(this.y * 0.02) * 0.5;
+                    this.rotation += this.rotSpeed;
+                    if (this.y > canvas.height + 70) { this.reset(); this.y = -50; }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate((this.rotation * Math.PI) / 180);
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.ellipse(0, 0, this.size * 0.6, this.size * 0.3, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            for (let i = 0; i < 30; i++) petals.push(new Petal());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                petals.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+        }
+
+        // ========== PARALLAX HERO ==========
+        const heroBg = document.getElementById('heroBg');
+        if (heroBg) {
+            window.addEventListener('scroll', () => {
+                heroBg.style.transform = `translateY(${window.pageYOffset * 0.5}px)`;
+            });
+        }
+
+        // ========== GALLERY LIGHTBOX ==========
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+        document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('active'));
+        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+        // ========== MUSIC TOGGLE ==========
+        const musicToggle = document.getElementById('musicToggle');
+        musicToggle.addEventListener('click', () => {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicToggle.innerHTML = '🎵';
+            } else {
+                bgMusic.play().catch(()=>{});
+                musicToggle.innerHTML = '🔊';
+            }
+            musicPlaying = !musicPlaying;
+        });
+
+        // ========== BACK TO TOP ==========
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => backToTop.classList.toggle('show', window.scrollY > 600));
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ========== AOS INIT ==========
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+</html>
