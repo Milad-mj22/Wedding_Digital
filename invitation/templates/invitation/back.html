@@ -21,15 +21,18 @@
         :root {
             --gold: #c9a96e;
             --gold-light: #e0cfa2;
-            --gold-dark: #b8943c;
             --blush: #f2d9d9;
             --soft-bg: #fefaf6;
             --dark: #3a3a3a;
             --white: #ffffff;
+            --glass-bg: rgba(255,255,255,0.7);
+            --glass-border: rgba(255,255,255,0.4);
             --shadow: 0 15px 40px rgba(0,0,0,0.06);
+            --parchment: #f4ebd9;
+            --parchment-dark: #d4c3a3;
             --wax: #b33a2e;
             --wax-light: #d44c3a;
-            --wax-dark: #8a2a1e;
+            --ribbon: #8f6b4c;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -69,14 +72,14 @@
             100% { transform: scale(0.8); opacity: 0.7; }
         }
 
-        /* ========== STAMP SCREEN (Envelope) ========== */
+        /* ========== STAMP SCREEN (Renaissance Envelope) ========== */
         #stamp-screen {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: 
-                radial-gradient(ellipse at 30% 20%, rgba(255,250,240,0.95) 0%, rgba(225,200,160,0.8) 100%),
-                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="%23c9a96e" stroke-width="0.5" opacity="0.2"/></svg>');
+                radial-gradient(ellipse at 30% 20%, rgba(255,250,240,0.9) 0%, rgba(225,200,160,0.7) 100%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="%23c9a96e" stroke-width="0.5" opacity="0.2"/><circle cx="20" cy="20" r="2" fill="%23c9a96e" opacity="0.3"/><circle cx="80" cy="80" r="2" fill="%23c9a96e" opacity="0.3"/></svg>');
             background-blend-mode: overlay;
             display: flex;
             align-items: center;
@@ -88,17 +91,18 @@
         }
 
         .envelope-wrapper {
-            perspective: 1500px;
-            width: 460px;
-            height: 320px;
+            perspective: 1200px;
+            width: 420px;
+            height: 300px;
             position: relative;
+            transition: transform 0.1s;
         }
 
-        /* انیمیشن زوم */
+        /* انیمیشن زوم و برگشت */
         @keyframes envelopeZoom {
             0% { transform: scale(1); }
-            30% { transform: scale(1.2); }
-            60% { transform: scale(1.2); }
+            30% { transform: scale(1.25); }
+            60% { transform: scale(1.25); }
             100% { transform: scale(1); }
         }
         .envelope-wrapper.zoom-effect {
@@ -110,86 +114,67 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            filter: drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+            transition: transform 0.4s;
+            filter: drop-shadow(0 30px 30px rgba(0,0,0,0.25));
         }
 
         .envelope:hover {
             transform: translateY(-8px);
         }
 
-        /* ===== بدنه پاکت ===== */
         .envelope-body {
             position: absolute;
             top: 0; left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(160deg, #fbf3e3 0%, #f0e2c8 40%, #e8d5b5 100%);
-            border: 3px solid var(--gold);
-            border-radius: 14px;
+            background: linear-gradient(135deg, #fdf3e0 0%, #f2e3c6 100%);
+            border: 3px solid #c9a96e;
+            border-radius: 12px;
             box-shadow: 
-                0 25px 50px rgba(0,0,0,0.25),
-                inset 0 0 60px rgba(255,255,255,0.4),
-                0 0 0 12px rgba(201,169,110,0.15);
+                0 25px 45px rgba(0,0,0,0.3),
+                inset 0 0 40px rgba(255,255,255,0.6),
+                0 0 0 10px rgba(201,169,110,0.15);
             overflow: hidden;
             z-index: 1;
         }
 
-        /* حاشیه تزئینی داخلی */
         .envelope-body::before {
             content: '';
             position: absolute;
-            top: 18px; left: 18px; right: 18px; bottom: 18px;
-            border: 2px dashed rgba(201,169,110,0.4);
-            border-radius: 8px;
+            top: 15px; left: 15px; right: 15px; bottom: 15px;
+            border: 2px dashed rgba(201,169,110,0.5);
+            border-radius: 6px;
             pointer-events: none;
             z-index: 2;
         }
         .envelope-body::after {
             content: '';
             position: absolute;
-            top: 28px; left: 28px; right: 28px; bottom: 28px;
-            border: 1px solid rgba(201,169,110,0.2);
-            border-radius: 6px;
+            top: 22px; left: 22px; right: 22px; bottom: 22px;
+            border: 1px solid rgba(201,169,110,0.3);
+            border-radius: 4px;
             pointer-events: none;
             z-index: 2;
         }
 
-        /* الگوی پس‌زمینه */
         .envelope-pattern {
             position: absolute;
             top: 0; left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(201,169,110,0.04) 8px, rgba(201,169,110,0.04) 10px),
-                repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(201,169,110,0.04) 8px, rgba(201,169,110,0.04) 10px);
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201,169,110,0.05) 10px, rgba(201,169,110,0.05) 12px);
             z-index: 1;
             pointer-events: none;
         }
 
-        /* الگوی گل‌های ظریف */
-        .envelope-floral {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(201,169,110,0.05) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(201,169,110,0.05) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(201,169,110,0.03) 0%, transparent 50%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* ===== روبان‌ها ===== */
         .ribbon-vertical {
             position: absolute;
             top: 0; left: 50%;
             transform: translateX(-50%);
-            width: 16px;
+            width: 14px;
             height: 100%;
-            background: linear-gradient(to right, #7a5a3a, #b9976b, #7a5a3a);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            background: linear-gradient(to right, #8f6b4c, #b9976b, #8f6b4c);
+            box-shadow: 0 0 12px rgba(0,0,0,0.3);
             z-index: 3;
             border-radius: 2px;
         }
@@ -199,14 +184,14 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 26px;
-            height: 16px;
-            background: linear-gradient(to right, #7a5a3a, #b9976b, #7a5a3a);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            width: 22px;
+            height: 14px;
+            background: #b9976b;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
-        .ribbon-vertical::before { top: -3px; }
-        .ribbon-vertical::after { bottom: -3px; }
+        .ribbon-vertical::before { top: -2px; }
+        .ribbon-vertical::after { bottom: -2px; }
 
         .ribbon-horizontal {
             position: absolute;
@@ -214,9 +199,9 @@
             left: 0;
             transform: translateY(-50%);
             width: 100%;
-            height: 16px;
-            background: linear-gradient(to bottom, #7a5a3a, #b9976b, #7a5a3a);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            height: 14px;
+            background: linear-gradient(to bottom, #8f6b4c, #b9976b, #8f6b4c);
+            box-shadow: 0 0 12px rgba(0,0,0,0.3);
             z-index: 3;
             border-radius: 2px;
         }
@@ -226,22 +211,21 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 16px;
-            height: 26px;
-            background: linear-gradient(to bottom, #7a5a3a, #b9976b, #7a5a3a);
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            width: 14px;
+            height: 22px;
+            background: #b9976b;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         }
-        .ribbon-horizontal::before { left: -3px; }
-        .ribbon-horizontal::after { right: -3px; }
+        .ribbon-horizontal::before { left: -2px; }
+        .ribbon-horizontal::after { right: -2px; }
 
-        /* ===== فلپ (درپوش) ===== */
         .flap-container {
             position: absolute;
             top: 0; left: 0;
             width: 100%;
             height: 100%;
-            perspective: 1200px;
+            perspective: 1000px;
             z-index: 10;
             pointer-events: none;
         }
@@ -250,15 +234,15 @@
             position: absolute;
             top: 0; left: 0;
             width: 100%;
-            height: 70%;
+            height: 68%;
             transform-origin: top center;
             transform-style: preserve-3d;
-            transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
             z-index: 11;
         }
 
         #stamp-screen.opening .envelope-flap {
-            transform: rotateX(-170deg);
+            transform: rotateX(-165deg);
         }
 
         .flap-front, .flap-back {
@@ -266,14 +250,14 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 0 0 14px 14px;
+            border-radius: 0 0 12px 12px;
         }
 
         .flap-front {
-            background: linear-gradient(170deg, #fef7e9 0%, #ecd8b8 100%);
+            background: linear-gradient(170deg, #fef7e9 0%, #e9d5b0 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
-            border-bottom: 3px solid var(--gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-bottom: 3px solid #c9a96e;
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,118 +265,50 @@
         .flap-front::after {
             content: '✧ M & M ✧';
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--gold);
-            text-shadow: 0 2px 8px rgba(255,255,255,0.6);
-            letter-spacing: 6px;
-            margin-top: -25px;
+            font-size: 1.6rem;
+            color: #c9a96e;
+            text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+            letter-spacing: 4px;
+            margin-top: -20px;
         }
 
         .flap-back {
-            background: linear-gradient(170deg, #d4b88c 0%, #b8976a 100%);
+            background: linear-gradient(170deg, #d2b78c 0%, #b8976a 100%);
             clip-path: polygon(0 0, 100% 0, 50% 100%);
             transform: rotateX(180deg);
-            border-bottom: 3px solid #7a5a3a;
-            box-shadow: inset 0 0 30px rgba(0,0,0,0.3);
+            border-bottom: 3px solid #8b6b4c;
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.4);
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
             font-family: 'Playfair Display', serif;
             font-size: 1rem;
-            color: #f5e8d4;
-            letter-spacing: 2px;
+            color: #5a4a3a;
+            letter-spacing: 1px;
         }
         .flap-back::after {
             content: 'You are cordially invited';
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* ===== تمبر (Stamp) - گوشه بالا سمت راست ===== */
-        .stamp {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 85px;
-            height: 100px;
-            background: linear-gradient(135deg, #f5e6d3, #e8d5b8);
-            border: 2px dashed var(--gold);
-            border-radius: 4px;
-            z-index: 15;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 5px;
-            transition: transform 0.5s ease;
-            transform: rotate(2deg);
-        }
-        .stamp:hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-        .stamp::before {
-            content: '';
-            position: absolute;
-            top: -8px; right: -8px; bottom: -8px; left: -8px;
-            border: 2px dashed rgba(201,169,110,0.3);
-            border-radius: 8px;
-            pointer-events: none;
-        }
-        .stamp-icon {
-            font-size: 2.8rem;
-            line-height: 1;
-            margin-bottom: 2px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-        .stamp-text {
-            font-size: 0.5rem;
-            color: var(--gold-dark);
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-align: center;
-            border-top: 1px solid rgba(201,169,110,0.3);
-            padding-top: 3px;
-            width: 100%;
-            font-family: 'Vazirmatn', sans-serif;
-        }
-        .stamp-price {
-            font-size: 0.7rem;
-            color: var(--gold-dark);
-            font-weight: 700;
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* ===== مهر (Seal) - پایین و وسط ===== */
-        .seal-container {
-            position: absolute;
-            bottom: 18%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 20;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         .seal {
-            width: 85px;
-            height: 85px;
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: radial-gradient(circle at 35% 30%, var(--wax-light), var(--wax) 70%, var(--wax-dark));
+            background: radial-gradient(circle at 30% 30%, var(--wax-light), var(--wax));
             box-shadow: 
-                0 15px 35px rgba(0,0,0,0.4),
-                inset 0 -8px 15px rgba(0,0,0,0.3),
-                0 0 0 8px rgba(201,169,110,0.3),
-                0 0 0 12px rgba(201,169,110,0.1);
+                0 12px 22px rgba(0,0,0,0.5),
+                inset 0 -6px 8px rgba(0,0,0,0.4),
+                0 0 0 6px rgba(201,169,110,0.5);
+            z-index: 20;
+            transition: opacity 0.3s;
             position: relative;
-            transition: all 0.3s ease;
-        }
-        .seal:hover {
-            transform: scale(1.05);
         }
 
-        /* نیمه‌های مهر */
         .seal-half {
             position: absolute;
             top: 0;
@@ -416,90 +332,54 @@
         }
 
         #stamp-screen.opening .seal-left {
-            transform: translateX(-55px) rotate(-50deg) scale(0.7);
+            transform: translateX(-60px) rotate(-45deg) scale(0.8);
             opacity: 0;
         }
         #stamp-screen.opening .seal-right {
-            transform: translateX(55px) rotate(50deg) scale(0.7);
+            transform: translateX(60px) rotate(45deg) scale(0.8);
             opacity: 0;
         }
 
-        /* خط ترک مهر */
         .seal::after {
             content: '';
             position: absolute;
-            top: 12%;
+            top: 10%;
             left: 50%;
             width: 2px;
-            height: 76%;
-            background: rgba(0,0,0,0.15);
+            height: 80%;
+            background: rgba(0,0,0,0.2);
             transform: translateX(-50%) scaleY(0);
-            transition: transform 0.6s ease 0.3s;
+            transition: transform 0.5s ease 0.3s;
             border-radius: 2px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
         }
         #stamp-screen.opening .seal::after {
             transform: translateX(-50%) scaleY(1);
         }
 
-        /* طرح روی مهر */
         .seal-design {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-family: 'Playfair Display', serif;
             color: #f8e3c4;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
             z-index: 25;
             pointer-events: none;
             line-height: 1;
             text-align: center;
         }
         .seal-design .ampersand {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             display: block;
-            margin: -4px 0;
-            font-weight: 300;
+            margin: -6px 0;
         }
 
-        /* روبان زیر مهر */
-        .seal-ribbon {
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 16px;
-            background: linear-gradient(to bottom, #7a5a3a, #b9976b, #7a5a3a);
-            border-radius: 0 0 8px 8px;
-            z-index: 19;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-        .seal-ribbon::before,
-        .seal-ribbon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 8px;
-            height: 20px;
-            background: linear-gradient(to bottom, #7a5a3a, #b9976b);
-            border-radius: 0 0 4px 4px;
-        }
-        .seal-ribbon::before {
-            left: -6px;
-            transform: rotate(-15deg);
-        }
-        .seal-ribbon::after {
-            right: -6px;
-            transform: rotate(15deg);
-        }
-
-        /* ===== متن پایین پاکت ===== */
         .envelope-text {
             position: absolute;
-            bottom: -70px;
+            bottom: -60px;
             left: 0;
             width: 100%;
             text-align: center;
@@ -507,7 +387,7 @@
             color: var(--dark);
             font-weight: 500;
             letter-spacing: 1px;
-            text-shadow: 0 2px 8px rgba(255,255,255,0.9);
+            text-shadow: 0 2px 6px rgba(255,255,255,0.9);
             animation: gentlePulse 2.5s infinite;
             z-index: 30;
         }
@@ -517,9 +397,6 @@
             50% { opacity: 1; transform: translateY(-4px); }
         }
 
-        /* ===== سایر بخش‌ها (بدون تغییر) ===== */
-        /* ... ادامه کد قبلی برای VIDEO SCREEN و سایر بخش‌ها ... */
-        
         /* ========== VIDEO SCREEN ========== */
         #video-screen {
             position: fixed;
@@ -546,6 +423,7 @@
             top: 0; left: 0;
         }
         
+        /* دکمه پخش ویدئو */
         .play-btn-overlay {
             position: absolute;
             top: 50%;
@@ -674,37 +552,146 @@
             opacity: 0.8;
             z-index: 5;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-10px); }
+
+        /* ========== SECTIONS GENERAL ========== */
+        .section { padding: 6rem 0; position: relative; }
+        .section-title {
+            font-size: 2.8rem; font-weight: 700; color: var(--gold);
+            text-align: center; margin-bottom: 4rem; position: relative;
         }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 2px;
+            background: var(--gold-light); margin: 1.2rem auto 0;
+        }
+
+        /* ========== COUNTDOWN ========== */
+        .countdown-wrapper { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+        .countdown-item {
+            text-align: center; min-width: 100px;
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border); border-radius: 24px;
+            padding: 2rem 1.5rem; box-shadow: var(--shadow); transition: transform 0.3s;
+        }
+        .countdown-item:hover { transform: translateY(-6px); }
+        .countdown-number {
+            font-family: 'Vazirmatn', sans-serif; font-size: 3.8rem;
+            font-weight: 700; color: var(--gold); display: block; line-height: 1;
+            animation: countPulse 2s infinite;
+        }
+        @keyframes countPulse {
+            0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); }
+        }
+        .countdown-label { font-size: 1rem; color: #888; margin-top: 0.5rem; letter-spacing: 1px; }
+
+        /* ========== SCRATCH COUNTDOWN ========== */
+        .scratch-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            background: white;
+        }
+        .scratch-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+            touch-action: none;
+            z-index: 10;
+            border-radius: 24px;
+        }
+        .scratch-canvas:active {
+            cursor: grabbing;
+        }
+        .scratch-hint {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--gold);
+            font-weight: 500;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(6px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            z-index: 11;
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            animation: hintPulse 2s infinite;
+        }
+        @keyframes hintPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* ========== TIMELINE ========== */
+        .timeline { position: relative; max-width: 900px; margin: 0 auto; padding: 2rem 0; }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; bottom: 0; right: 50%;
+            width: 2px; background: var(--gold-light); transform: translateX(50%);
+        }
+        .timeline-item { display: flex; justify-content: flex-end; padding-right: calc(50% + 30px); position: relative; margin-bottom: 4rem; }
+        .timeline-item:nth-child(even) { justify-content: flex-start; padding-right: 0; padding-left: calc(50% + 30px); }
+        .timeline-dot {
+            position: absolute; right: 50%; top: 20px; width: 18px; height: 18px;
+            background: var(--gold); border-radius: 50%; border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--gold-light); transform: translateX(50%); z-index: 2;
+        }
+        .timeline-content { background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow); width: 100%; max-width: 380px; }
+        .timeline-date { color: var(--gold); font-weight: 700; margin-bottom: 0.8rem; font-size: 1.2rem; }
+
+        /* ========== GALLERY ========== */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; padding: 0 1rem; }
+        .gallery-item { border-radius: 16px; overflow: hidden; cursor: pointer; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.4s; }
+        .gallery-item:hover { transform: scale(1.03); }
+        .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; }
+
+        /* ========== LIGHTBOX ========== */
+        .lightbox { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center; z-index: 10001; visibility: hidden; opacity: 0; transition: 0.3s; }
+        .lightbox.active { visibility: visible; opacity: 1; }
+        .lightbox img { max-width: 90%; max-height: 80vh; border-radius: 12px; }
+        .lightbox-close { position: absolute; top: 30px; right: 40px; color: white; font-size: 2.5rem; cursor: pointer; }
+
+        /* ========== BRIDE & GROOM ========== */
+        .couple-card { background: white; border-radius: 24px; padding: 2.5rem 2rem; text-align: center; box-shadow: var(--shadow); }
+        .couple-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold-light); margin-bottom: 1.5rem; }
+
+        /* ========== MUSIC BUTTON ========== */
+        .music-btn { position: fixed; bottom: 30px; right: 30px; width: 55px; height: 55px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--gold); cursor: pointer; z-index: 9998; box-shadow: 0 8px 25px rgba(0,0,0,0.12); transition: all 0.3s; }
+        .music-btn:hover { background: var(--gold); color: white; }
+
+        /* ========== BACK TO TOP ========== */
+        .back-to-top { position: fixed; bottom: 100px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: var(--gold); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer; z-index: 9998; opacity: 0; transform: translateY(20px); transition: all 0.4s; box-shadow: 0 8px 25px rgba(201,169,110,0.4); }
+        .back-to-top.show { opacity: 1; transform: translateY(0); }
+
+        /* ========== RSVP ========== */
+        .rsvp-card { background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); border-radius: 28px; padding: 3rem; box-shadow: var(--shadow); max-width: 650px; margin: 0 auto; border: 1px solid var(--glass-border); }
+        .btn-gold { background: var(--gold); color: white; border: none; padding: 1rem; border-radius: 50px; font-weight: 600; letter-spacing: 0.5px; transition: all 0.3s; }
+        .btn-gold:hover { background: #b28b4b; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(201,169,110,0.4); }
+
+        /* ========== PETALS ========== */
+        #petals-canvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events: none; z-index: 9999; }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .envelope-wrapper { width: 340px; height: 240px; }
-            .stamp { width: 65px; height: 78px; top: 12px; right: 12px; }
-            .stamp-icon { font-size: 2rem; }
-            .stamp-text { font-size: 0.4rem; }
-            .stamp-price { font-size: 0.6rem; }
-            .seal { width: 65px; height: 65px; }
-            .seal-design { font-size: 1.6rem; }
-            .seal-ribbon { width: 24px; height: 12px; }
-            .seal-ribbon::before, .seal-ribbon::after { width: 6px; height: 16px; }
-            .flap-front::after { font-size: 1.2rem; margin-top: -15px; }
-            .envelope-text { font-size: 1rem; bottom: -55px; }
-            .play-btn-overlay { width: 70px; height: 70px; }
-            .play-btn-overlay svg { width: 35px; height: 35px; }
             .hero h1 { font-size: 3rem; }
             .hero-content { padding: 1.5rem; }
-        }
-
-        @media (max-width: 480px) {
-            .envelope-wrapper { width: 290px; height: 200px; }
-            .stamp { width: 55px; height: 68px; top: 8px; right: 8px; }
-            .stamp-icon { font-size: 1.6rem; }
-            .seal { width: 55px; height: 55px; }
-            .seal-design { font-size: 1.2rem; }
-            .seal-ribbon { width: 20px; height: 10px; }
+            .countdown-number { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .timeline::before { right: 20px; }
+            .timeline-item, .timeline-item:nth-child(even) { padding-left: 0; padding-right: 50px; justify-content: flex-start; }
+            .timeline-dot { right: 20px; }
+            .timeline-content { max-width: 100%; }
+            .envelope-wrapper { width: 320px; height: 230px; }
+            .flap-front::after { font-size: 1.2rem; }
+            .play-btn-overlay { width: 70px; height: 70px; }
+            .play-btn-overlay svg { width: 35px; height: 35px; }
         }
     </style>
 </head>
@@ -717,58 +704,37 @@
     <div id="stamp-screen">
         <div class="envelope-wrapper">
             <div class="envelope">
-                <!-- بدنه پاکت -->
                 <div class="envelope-body">
                     <div class="envelope-pattern"></div>
-                    <div class="envelope-floral"></div>
                     <div class="ribbon-vertical"></div>
                     <div class="ribbon-horizontal"></div>
-                    
-                    <!-- تمبر (گوشه بالا سمت راست) -->
-                    <div class="stamp">
-                        <div class="stamp-icon">💌</div>
-                        <div class="stamp-price">❤ 50</div>
-                        <div class="stamp-text">عشق ابدی</div>
-                    </div>
                 </div>
-
-                <!-- فلپ -->
                 <div class="flap-container">
                     <div class="envelope-flap">
                         <div class="flap-front"></div>
                         <div class="flap-back"></div>
                     </div>
                 </div>
-
-                <!-- مهر (پایین و وسط) -->
-                <div class="seal-container">
-                    <div class="seal">
-                        <div class="seal-half seal-left"></div>
-                        <div class="seal-half seal-right"></div>
-                        <div class="seal-design">
-                            M<br>
-                            <span class="ampersand">&amp;</span>
-                            M
-                        </div>
-                    </div>
-                    <div class="seal-ribbon"></div>
+                <div class="seal">
+                    <div class="seal-half seal-left"></div>
+                    <div class="seal-half seal-right"></div>
+                    <div class="seal-design"></div>
                 </div>
-
-                <!-- متن راهنما -->
-                <div class="envelope-text">✨ برای گشودن دعوتنامه لمس کنید ✨</div>
+                <div class="envelope-text">برای گشودن دعوتنامه لمس کنید</div>
             </div>
         </div>
     </div>
 
     <!-- ==================== VIDEO SCREEN ==================== -->
     <div id="video-screen">
-        <video id="intro-video" playsinline poster="{% static 'invitation/images/poster.jpg' %}">
-            <source src="/invitation/video/intro.mp4" type="video/mp4">
+        <video id="intro-video" playsinline muted poster="{% static 'invitation/images/poster.jpg' %}">
             <source src="{% static 'invitation/video/intro.mp4' %}" type="video/mp4">
             <source src="{% static 'invitation/video/intro.webm' %}" type="video/webm">
+            <source src="{% static 'invitation/video/intro.ogv' %}" type="video/ogg">
             مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
         </video>
         
+        <!-- دکمه پخش -->
         <div class="play-btn-overlay" id="playButton">
             <svg viewBox="0 0 24 24">
                 <polygon points="5,3 19,12 5,21"/>
@@ -780,8 +746,7 @@
 
     <!-- ==================== MAIN INVITATION ==================== -->
     <div id="invitation" style="display:none;">
-        <!-- ... ادامه کد قبلی برای دعوتنامه ... -->
-        
+
         <!-- MUSIC & BACK TO TOP -->
         <audio id="bg-music" loop>
             <source src="{% static 'invitation/music/wedding.mp3' %}" type="audio/mpeg">
@@ -819,10 +784,145 @@
             </div>
         </section>
 
-        <!-- ... ادامه سایر بخش‌ها (همانند قبل) ... -->
+        <!-- BRIDE & GROOM -->
+        <section class="section" style="background: #fdf8f3;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">عروس و داماد</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-5" data-aos="fade-right">
+                        <div class="couple-card">
+                            <h4>{{ invitation.groom_name }}</h4>
+                            <p class="text-muted">پسری از تبار عشق، همیشه در جست‌وجوی نیمه‌ی گمشده.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5" data-aos="fade-left">
+                        <div class="couple-card">
+                            <h4>{{ invitation.bride_name }}</h4>
+                            <p class="text-muted">دختری با قلبی به‌بزرگی دریا، که عشق را معنا می‌بخشد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR STORY TIMELINE -->
+        {% if invitation.love_story %}
+        <section class="section" style="background: #fff;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">داستان عشق ما</h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">نخستین نگاه</div>
+                            <p>همه‌چیز از یک نگاه ساده شروع شد، نگاهی که دنیا را برایمان تغییر داد.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">امروز</div>
+                            <p>{{ invitation.love_story|truncatewords:40 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        <!-- GALLERY -->
+        <section class="section" style="background: #fdf8f3;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">گالری خاطرات</h2>
+                <div class="gallery-grid" id="gallery">
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=600" alt="عکس ۱"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="عکس ۲"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=600" alt="عکس ۳"></div>
+                    <div class="gallery-item" data-aos="zoom-in"><img src="https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?q=80&w=600" alt="عکس ۴"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENT DETAILS -->
+        <section class="section" style="background: #fff;">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">مراسم</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="couple-card">
+                            <h4 style="color: var(--gold);">پنج شنبه ۵ شهریور ۱۴۰۵</h4>
+                            <p class="lead">شروع مراسم از ۷ شب تا ...</p>
+                            <hr style="width: 50px; margin: 1.5rem auto; border-top: 2px solid var(--gold-light);">
+                            <h5>{{ invitation.venue }}</h5>
+                            <p class="text-muted">{{ invitation.address }}</p>
+                            
+                            {% if invitation.address %}
+                            <a href="https://www.google.com/maps/search/?api=1&query={{ invitation.address|urlencode }}" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="btn btn-gold mt-3 px-5 py-3 d-inline-flex align-items-center gap-2"
+                               style="border-radius: 50px; font-size: 1.1rem;">
+                                📍 نمایش روی نقشه
+                            </a>
+                            {% endif %}
+                            
+                            {% if invitation.map_embed %}
+                            <div class="mt-4 rounded-4 overflow-hidden shadow-sm">{{ invitation.map_embed|safe }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <section class="section" style="background: #fdf8f3;" id="rsvp">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">پاسخ به دعوت</h2>
+                <div class="rsvp-card" data-aos="zoom-in">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}success{% endif %} text-center rounded-4">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-floating mb-4">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="نام" required>
+                            <label for="name">نام و نام خانوادگی</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="ایمیل" required>
+                            <label for="email">ایمیل</label>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" name="attending" id="attending" checked>
+                            <label class="form-check-label" for="attending">با کمال میل شرکت می‌کنم</label>
+                        </div>
+                        <div class="form-floating mb-4">
+                            <textarea class="form-control" id="message" name="message" style="height: 120px" placeholder="پیام"></textarea>
+                            <label for="message">پیام تبریک (اختیاری)</label>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 py-3">ارسال پاسخ</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center py-5" style="background: #2c2c2c; color: #ccc;">
+            <p class="mb-2">با عشق، <span style="color: var(--gold-light);">{{ invitation.bride_name }} و {{ invitation.groom_name }}</span></p>
+            <small>ساخته‌شده با جنگو و کلی حس خوب ✨</small>
+        </footer>
     </div>
 
-    <!-- SCRIPTS (همانند قبل) -->
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="" id="lightboxImg">
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // ========== PRELOADER ==========
@@ -840,6 +940,7 @@
         const bgMusic = document.getElementById('bg-music');
         const stampScreen = document.getElementById('stamp-screen');
         let musicPlaying = false;
+        let videoStarted = false;
 
         function showInvitation() {
             videoScreen.classList.remove('active');
@@ -865,9 +966,11 @@
                 stampScreen.style.visibility = 'hidden';
                 videoScreen.classList.add('active');
                 
+                // تلاش برای پخش خودکار ویدئو
                 const playPromise = video.play();
                 if (playPromise !== undefined) {
                     playPromise.then(() => {
+                        videoStarted = true;
                         playButton.style.display = 'none';
                     }).catch(error => {
                         console.log('Autoplay prevented, showing play button');
@@ -877,18 +980,30 @@
             }, 900);
         });
 
+        // ========== PLAY BUTTON ==========
         playButton.addEventListener('click', function() {
             video.play();
             playButton.style.display = 'none';
+            videoStarted = true;
         });
 
+        // ========== VIDEO EVENTS ==========
         video.addEventListener('ended', showInvitation);
+        
+        video.addEventListener('canplay', function() {
+            console.log('Video can play');
+        });
+
+        video.addEventListener('error', function(e) {
+            console.warn('Video error:', e);
+            // اگر ویدئو خطا داد، بعد از 2 ثانیه به صفحه دعوتنامه برو
+            setTimeout(showInvitation, 2000);
+        });
+
+        // ========== SKIP BUTTON ==========
         skipBtn.addEventListener('click', () => {
             video.pause();
             showInvitation();
-        });
-        video.addEventListener('error', () => {
-            setTimeout(showInvitation, 2000);
         });
 
         // ========== COUNTDOWN ==========

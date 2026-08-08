@@ -42,3 +42,773 @@ Traceback (most recent call last):
   File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir'. You may need to add 'milad-maral.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:24:25,817 log 3477991 139645020165952 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:24:25,817 log 3477991 139645020165952 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:24:25,830 log 3477992 139645020165952 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:24:25,830 log 3477992 139645020165952 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:25:02,904 log 3477991 139645020165952 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:25:02,904 log 3477991 139645020165952 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:25:10,461 log 3477991 139645020165952 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:25:10,461 log 3477991 139645020165952 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:27,808 log 3493690 140443107600192 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:27,808 log 3493690 140443107600192 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,609 log 3493687 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,609 log 3493687 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,632 log 3493687 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,632 log 3493687 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,706 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,706 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,730 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,730 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,774 log 3494598 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,774 log 3494598 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,776 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,776 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,799 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,799 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,827 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,827 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,865 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,865 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,871 log 3494599 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,871 log 3494599 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,873 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,873 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,896 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,896 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,909 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,909 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,921 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,921 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,948 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,948 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,958 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,958 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,966 log 3494598 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,966 log 3494598 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,976 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,976 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,977 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,977 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,986 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:43,986 log 3491289 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,010 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,010 log 3491289 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,012 log 3493687 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,012 log 3493687 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,020 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,020 log 3494599 139798839650112 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,048 log 3494599 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:37:44,048 log 3494599 139798839650112 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:18,962 log 3517582 140255649531712 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:18,962 log 3517582 140255649531712 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:20,372 log 3517582 140255649531712 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:20,372 log 3517582 140255649531712 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:39,497 log 3511324 139716457035584 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:42:39,497 log 3511324 139716457035584 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:16,022 log 3511324 139716457035584 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:16,022 log 3511324 139716457035584 Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'www.milad-maral.ir.seketalamanager.ir'. You may need to add 'www.milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:34,471 log 3518903 139716457035584 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:34,471 log 3518903 139716457035584 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/security.py", line 28, in process_request
+    host = self.redirect_host or request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:41,450 log 3518973 140255649531712 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+ERROR 2026-08-08 16:43:41,450 log 3518973 140255649531712 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.

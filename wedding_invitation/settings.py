@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-od$_ejqew5&j1homic4r9(!@83k-7o8^zz&f1ju!8w1@ot-v@&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # برای تولید به False تغییر دهید
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']  # برای تولید، دامنه‌های خاص را وارد کنید
 
 
 # Application definition
@@ -37,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'invitation', 
+    'invitation',  # اپلیکیشن دعوتنامه
+    # 'accounts',  # اگر اپلیکیشن accounts دارید
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # برای سرویس فایل‌های استاتیک در تولید
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -55,7 +59,9 @@ ROOT_URLCONF = 'wedding_invitation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',  # پوشه templates در ریشه پروژه
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,6 +86,18 @@ DATABASES = {
     }
 }
 
+# اگر از PostgreSQL استفاده می‌کنید:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'wedding_db',
+#         'USER': 'wedding_user',
+#         'PASSWORD': 'your_password',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -103,9 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'  # تغییر به فارسی
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'  # تغییر به منطقه زمانی ایران
 
 USE_I18N = True
 
@@ -115,8 +133,37 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
+# مسیرهای فایل‌های استاتیک
+STATICFILES_DIRS = [
+    BASE_DIR / 'invitation' / 'static',  # فایل‌های استاتیک اپلیکیشن invitation
+    BASE_DIR / 'static',  # اگر پوشه static در ریشه دارید
+]
+
+# مسیر جمع‌آوری فایل‌های استاتیک در تولید
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Use a single definition
+
+
+# تنظیمات WhiteNoise برای سرویس بهتر فایل‌های استاتیک
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Media files (آپلود فایل‌ها)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'invitation' / 'static',
+    BASE_DIR / 'static',
+]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -126,7 +173,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ========== ایجاد پوشه logs به صورت خودکار ==========
 LOGS_DIR = BASE_DIR / 'logs'
 if not LOGS_DIR.exists():
-    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    try:
+        LOGS_DIR.mkdir(parents=True, exist_ok=True)
+        print(f"✅ پوشه logs در {LOGS_DIR} ایجاد شد")
+    except Exception as e:
+        print(f"⚠️ خطا در ایجاد پوشه logs: {e}")
+
+
+
+# settings.py
+ALLOWED_HOSTS = [
+    'milad-maral.ir',
+    'www.milad-maral.ir',
+    'localhost',
+    '127.0.0.1',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://milad-maral.ir',
+    'http://milad-maral.ir',
+]
+
 
 # ========== LOGGING CONFIGURATION ==========
 LOGGING = {
@@ -156,7 +223,7 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'INFO',
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'colored',
@@ -164,15 +231,15 @@ LOGGING = {
         'file': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'django.log',  # استفاده از LOGS_DIR
-            'maxBytes': 1024 * 1024 * 5,
+            'filename': LOGS_DIR / 'django.log',
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
             'backupCount': 5,
             'formatter': 'verbose',
         },
         'error_file': {
             'level': 'ERROR',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'errors.log',  # استفاده از LOGS_DIR
+            'filename': LOGS_DIR / 'errors.log',
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'verbose',
@@ -180,7 +247,7 @@ LOGGING = {
         'request_file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'requests.log',  # استفاده از LOGS_DIR
+            'filename': LOGS_DIR / 'requests.log',
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 5,
             'formatter': 'simple',
@@ -188,7 +255,7 @@ LOGGING = {
         'db_file': {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'database.log',  # استفاده از LOGS_DIR
+            'filename': LOGS_DIR / 'database.log',
             'maxBytes': 1024 * 1024 * 5,
             'backupCount': 3,
             'formatter': 'verbose',
@@ -201,36 +268,43 @@ LOGGING = {
         },
     },
     'loggers': {
+        # لاگر اصلی جنگو
         'django': {
             'handlers': ['console', 'file'],
             'propagate': True,
             'level': 'INFO',
         },
+        # لاگر درخواست‌ها
         'django.request': {
             'handlers': ['request_file', 'error_file'],
             'level': 'ERROR',
             'propagate': False,
         },
+        # لاگر سرور
         'django.server': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
             'propagate': False,
         },
+        # لاگر دیتابیس
         'django.db.backends': {
             'handlers': ['db_file'],
-            'level': 'DEBUG',
+            'level': 'DEBUG' if DEBUG else 'WARNING',
             'propagate': False,
         },
+        # لاگر اختصاصی برای اپلیکیشن invitation
         'invitation': {
             'handlers': ['console', 'file', 'error_file'],
-            'level': 'DEBUG',
+            'level': 'DEBUG' if DEBUG else 'INFO',
             'propagate': True,
         },
+        # لاگر اختصاصی برای اپلیکیشن accounts (اگر دارید)
         'accounts': {
             'handlers': ['console', 'file'],
             'level': 'INFO',
             'propagate': True,
         },
+        # لاگر عمومی برای پروژه
         'project': {
             'handlers': ['console', 'file', 'error_file'],
             'level': 'INFO',
@@ -242,3 +316,55 @@ LOGGING = {
         'level': 'WARNING',
     },
 }
+
+# ========== تنظیمات اضافی برای محیط تولید ==========
+if not DEBUG:
+    # در محیط تولید، لاگ‌های کمتری در کنسول نمایش داده شود
+    LOGGING['handlers']['console']['level'] = 'WARNING'
+    LOGGING['loggers']['django']['level'] = 'WARNING'
+    LOGGING['loggers']['invitation']['level'] = 'INFO'
+    
+    # ارسال ایمیل برای خطاهای بحرانی
+    LOGGING['loggers']['django']['handlers'].append('mail_admins')
+    
+    # تنظیمات امنیتی بیشتر
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_BROWSER_XSS_FILTER = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    X_FRAME_OPTIONS = 'DENY'
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+
+# ========== تنظیمات پیام‌ها (Messages) ==========
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
+
+# ========== تنظیمات ایمیل (در صورت نیاز) ==========
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your_email@gmail.com'
+# EMAIL_HOST_PASSWORD = 'your_password'
+# DEFAULT_FROM_EMAIL = 'your_email@gmail.com'
+# ADMIN_EMAIL = 'admin@example.com'
+
+# ========== تنظیمات CSRF و Session ==========
+CSRF_TRUSTED_ORIGINS = [
+    'https://your-domain.com',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
+
+# ========== تنظیمات آپلود فایل ==========
+FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10 MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10 MB
