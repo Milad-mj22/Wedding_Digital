@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-od$_ejqew5&j1homic4r9(!@83k-7o8^zz&f1ju!8w1@ot-v@&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # برای تولید به False تغییر دهید
+DEBUG = True  # برای تولید به False تغییر دهید
 
 ALLOWED_HOSTS = ['*']  # برای تولید، دامنه‌های خاص را وارد کنید
 
@@ -187,12 +187,13 @@ ALLOWED_HOSTS = [
     'www.milad-maral.ir',
     'localhost',
     '127.0.0.1',
+    '*'
 ]
 
-CSRF_TRUSTED_ORIGINS = [
-    'https://milad-maral.ir',
-    'http://milad-maral.ir',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://milad-maral.ir',
+#     'http://milad-maral.ir',
+# ]
 
 
 # ========== LOGGING CONFIGURATION ==========
@@ -318,25 +319,25 @@ LOGGING = {
 }
 
 # ========== تنظیمات اضافی برای محیط تولید ==========
-if not DEBUG:
-    # در محیط تولید، لاگ‌های کمتری در کنسول نمایش داده شود
-    LOGGING['handlers']['console']['level'] = 'WARNING'
-    LOGGING['loggers']['django']['level'] = 'WARNING'
-    LOGGING['loggers']['invitation']['level'] = 'INFO'
+# if not DEBUG:
+#     # در محیط تولید، لاگ‌های کمتری در کنسول نمایش داده شود
+#     LOGGING['handlers']['console']['level'] = 'WARNING'
+#     LOGGING['loggers']['django']['level'] = 'WARNING'
+#     LOGGING['loggers']['invitation']['level'] = 'INFO'
     
-    # ارسال ایمیل برای خطاهای بحرانی
-    LOGGING['loggers']['django']['handlers'].append('mail_admins')
+#     # ارسال ایمیل برای خطاهای بحرانی
+#     LOGGING['loggers']['django']['handlers'].append('mail_admins')
     
-    # تنظیمات امنیتی بیشتر
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    X_FRAME_OPTIONS = 'DENY'
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
+#     # تنظیمات امنیتی بیشتر
+#     SECURE_SSL_REDIRECT = True
+#     SESSION_COOKIE_SECURE = True
+#     CSRF_COOKIE_SECURE = True
+#     SECURE_BROWSER_XSS_FILTER = True
+#     SECURE_CONTENT_TYPE_NOSNIFF = True
+#     X_FRAME_OPTIONS = 'DENY'
+#     SECURE_HSTS_SECONDS = 31536000
+#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#     SECURE_HSTS_PRELOAD = True
 
 # ========== تنظیمات پیام‌ها (Messages) ==========
 from django.contrib.messages import constants as messages

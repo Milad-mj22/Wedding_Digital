@@ -7,14 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دعوتنامه عروسی {{ invitation.bride_name }} و {{ invitation.groom_name }}</title>
     
-    <!-- فونت‌ها -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 RTL (local) -->
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.rtl.min.css' %}">
     
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS (local) -->
+    <link rel="stylesheet" href="{% static 'aos/aos.css' %}">
     
-    <!-- Bootstrap 5 RTL -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Fonts (local via @font-face) -->
+    <style>
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url("{% static 'fonts/playfair/PlayfairDisplay-Regular.ttf' %}") format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url("{% static 'fonts/playfair/PlayfairDisplay-Bold.ttf' %}") format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Playfair Display';
+            src: url("{% static 'fonts/playfair/PlayfairDisplay-Italic.ttf' %}") format('truetype');
+            font-weight: 400;
+            font-style: italic;
+        }
+        
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url("{% static 'fonts/vazirmatn/Vazirmatn-Regular.ttf' %}") format('truetype');
+            font-weight: 400;
+        }
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url("{% static 'fonts/vazirmatn/Vazirmatn-Medium.ttf' %}") format('truetype');
+            font-weight: 500;
+        }
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url("{% static 'fonts/vazirmatn/Vazirmatn-Bold.ttf' %}") format('truetype');
+            font-weight: 700;
+        }
+        @font-face {
+            font-family: 'Vazirmatn';
+            src: url("{% static 'fonts/vazirmatn/Vazirmatn-Light.ttf' %}") format('truetype');
+            font-weight: 300;
+        }
+    </style>
     
     <style>
         /* ========== متغیرها ========== */
