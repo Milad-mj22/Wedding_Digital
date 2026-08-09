@@ -812,6 +812,139 @@ Traceback (most recent call last):
   File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+<<<<<<< HEAD
+ERROR 2026-08-08 16:59:37,388 log 12136 18176 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 16:59:37,390 log 12136 13356 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 16:59:41,974 log 12136 6772 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 16:59:41,976 log 12136 17116 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 16:59:53,227 log 12136 8784 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 16:59:53,233 log 12136 10088 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:24,703 log 24004 18864 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:24,704 log 24004 2040 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:27,763 log 24004 1148 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:27,764 log 24004 11188 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:38,037 log 24004 5996 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:38,039 log 24004 19852 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:47,968 log 24004 23328 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:00:47,969 log 24004 18832 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,145 log 22328 10248 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,147 log 22328 14344 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,148 log 22328 7048 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,150 log 22328 20316 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,930 log 22328 19344 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,931 log 22328 19872 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,933 log 22328 22216 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,934 log 22328 11536 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,934 log 22328 16548 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:37,936 log 22328 20888 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:41,102 log 22328 12644 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:41,103 log 22328 19260 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,364 log 22328 22284 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,365 log 22328 12124 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,367 log 22328 6936 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,367 log 22328 9756 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,368 log 22328 1160 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:02:43,369 log 22328 14464 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:04:07,774 log 23576 18984 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:04:07,775 log 23576 11244 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2026-08-08 17:04:55,176 log 21580 21036 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:04:55,176 log 21580 13300 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:04:55,181 log 21580 15692 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:04:55,591 log 21580 15692 "GET /favicon.ico HTTP/1.1" 404 2811
+ERROR 2026-08-08 17:10:07,962 log 21580 16548 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:10:07,964 log 21580 21412 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:10:11,205 log 21580 19972 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:10:11,207 log 21580 16088 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2026-08-08 17:10:23,891 log 21580 1844 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:10:23,952 log 21580 22288 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:10:23,984 log 21580 22856 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:10:24,156 log 21580 22288 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:10:24,168 log 21580 17720 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:10:24,185 log 21580 19240 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:10:24,186 log 21580 720 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:10:24,221 log 21580 20096 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:10:28,959 log 21580 6136 "GET /static/fonts/vazirmatn/Vazirmatn-Light.ttf HTTP/1.1" 404 2032
+WARNING 2026-08-08 17:10:40,226 log 21580 18424 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:10:40,385 log 21580 21272 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:10:40,397 log 21580 12296 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:10:40,407 log 21580 10236 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:10:40,450 log 21580 24112 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:10:40,455 log 21580 17888 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:10:40,501 log 21580 12104 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:10:40,508 log 21580 18864 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:10:43,956 log 21580 22284 "GET /static/fonts/vazirmatn/Vazirmatn-Light.ttf HTTP/1.1" 404 2032
+ERROR 2026-08-08 17:11:02,653 log 21580 11752 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:11:02,654 log 21580 20468 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:11:04,461 log 21580 7256 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:11:04,463 log 21580 3928 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:56,719 log 1464 17704 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:56,722 log 1464 17592 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,699 log 1464 19308 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,700 log 1464 19240 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,703 log 1464 19312 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,703 log 1464 19360 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,706 log 1464 19316 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:12:58,706 log 1464 19252 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:12,130 log 1464 3980 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:12,132 log 1464 6384 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:24,853 log 14152 16292 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:24,854 log 14152 15492 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:25,104 log 14152 17256 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:25,109 log 14152 1548 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:25,112 log 14152 14088 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:25,118 log 14152 1320 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:26,645 log 14152 19404 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-08 17:13:26,648 log 14152 19420 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2026-08-08 17:13:34,604 log 14152 2524 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+ERROR 2026-08-08 17:13:34,745 log 14152 8740 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2026-08-08 17:13:34,750 log 14152 1464 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:13:34,750 log 14152 18596 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:13:34,750 log 14152 2388 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:13:34,789 log 14152 17128 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:13:34,809 log 14152 13208 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:13:34,826 log 14152 15588 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:13:34,864 log 14152 2388 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:13:38,517 log 14152 9824 "GET /static/bootstrap/bootstrap.rtl.min.css.map HTTP/1.1" 404 2032
+WARNING 2026-08-08 17:13:45,279 log 14152 20400 "GET /static/fonts/vazirmatn/Vazirmatn-Light.ttf HTTP/1.1" 404 2032
+WARNING 2026-08-08 17:13:56,424 log 14152 17788 "GET /static/bootstrap/bootstrap.rtl.min.css.map HTTP/1.1" 404 2032
+WARNING 2026-08-08 17:14:01,882 log 14152 3444 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:14:01,962 log 14152 16064 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:14:01,963 log 14152 19536 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:14:02,063 log 14152 5436 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:14:02,074 log 14152 19576 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:14:02,125 log 14152 12752 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:14:02,154 log 14152 20464 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:14:02,155 log 14152 19536 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:14:02,791 log 14152 19796 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:14:02,887 log 14152 19816 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:14:02,887 log 14152 18316 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:14:02,985 log 14152 19348 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:14:03,009 log 14152 6428 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:14:03,048 log 14152 5104 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:14:03,061 log 14152 17248 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:14:03,062 log 14152 9732 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:14:53,365 log 14152 3048 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:14:53,461 log 14152 5204 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:14:53,461 log 14152 18948 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:01,455 log 14152 5204 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:01,456 log 14152 11108 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:15:01,492 log 14152 17788 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:24,798 log 14152 16876 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:24,876 log 14152 3636 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:24,877 log 14152 18500 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:15:24,987 log 14152 13656 "GET /static/fonts/vazirmatn/Vazirmatn-Bold.ttf HTTP/1.1" 404 2029
+WARNING 2026-08-08 17:15:24,987 log 14152 11108 "GET /static/fonts/vazirmatn/Vazirmatn-Regular.ttf HTTP/1.1" 404 2038
+WARNING 2026-08-08 17:15:25,006 log 14152 18500 "GET /static/fonts/playfair/PlayfairDisplay-Bold.ttf HTTP/1.1" 404 2044
+WARNING 2026-08-08 17:15:25,054 log 14152 916 "GET /static/fonts/playfair/PlayfairDisplay-Regular.ttf HTTP/1.1" 404 2053
+WARNING 2026-08-08 17:15:25,054 log 14152 3016 "GET /static/fonts/vazirmatn/Vazirmatn-Medium.ttf HTTP/1.1" 404 2035
+WARNING 2026-08-08 17:15:27,837 log 14152 15104 "GET /static/fonts/vazirmatn/Vazirmatn-Light.ttf HTTP/1.1" 404 2032
+WARNING 2026-08-08 17:15:51,376 log 10272 19792 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:51,452 log 10272 13676 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:51,456 log 10272 20272 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:15:55,803 log 10272 20272 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-08 17:15:55,829 log 10272 6460 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-08 17:15:55,830 log 10272 17788 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+=======
 WARNING 2026-08-08 16:58:21,113 log 3531645 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2026-08-08 16:58:21,113 log 3531645 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2026-08-08 16:58:31,626 log 3541200 140001451538240 Forbidden (Referer checking failed - no Referer.): /
@@ -826,6 +959,7 @@ WARNING 2026-08-08 16:59:23,035 log 3541245 140001451538240 Forbidden (Referer c
 WARNING 2026-08-08 16:59:23,035 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+<<<<<<< HEAD
 ERROR 2026-08-08 19:20:10,124 log 4065389 140599049430848 Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
 Traceback (most recent call last):
   File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
@@ -1882,3 +2016,22 @@ Traceback (most recent call last):
   File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+=======
+>>>>>>> 5bbf426300c3d9acd88bcdaa5cfc0ba27cd00707
+WARNING 2026-08-09 09:59:21,736 log 8252 11920 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-09 09:59:21,801 log 8252 16840 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 09:59:21,971 log 8252 17788 "GET /static/invitation/video/intro.ogv HTTP/1.1" 404 2005
+WARNING 2026-08-09 09:59:26,176 log 8252 10540 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+ERROR 2026-08-09 10:13:14,989 log 8252 4420 "GET / HTTP/1.1" 500 214508
+ERROR 2026-08-09 10:13:15,476 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:16,862 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:17,577 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:46,571 log 8252 4420 "GET / HTTP/1.1" 500 214114
+ERROR 2026-08-09 10:13:47,469 log 8252 4420 "GET / HTTP/1.1" 500 214251
+WARNING 2026-08-09 10:26:01,151 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:26:17,048 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:28:25,633 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:29:52,993 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+ERROR 2026-08-09 10:30:01,970 log 4132 16188 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-09 10:30:01,974 log 4132 5264 You're accessing the development server over HTTPS, but it only supports HTTP.
+>>>>>>> 36dc2026b24584bd3081b10f0392fe83d317cac5
