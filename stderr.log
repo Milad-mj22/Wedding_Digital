@@ -555,3 +555,5 @@ Not Found: /hosting/phpinfo.php
 Not Found: /smtp/phpinfo.php
 Not Found: /favicon.ico
 [UID:1634][310638] Child process with pid: 382701 was killed by signal: 15, core dumped: no
+io.UnsupportedOperation: fileno
+[UID:1634][441593] Child process with pid: 441605 was killed by signal: 15, core dumped: no
