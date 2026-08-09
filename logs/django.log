@@ -960,3 +960,19 @@ WARNING 2026-08-08 16:59:23,035 log 3541245 140001451538240 Forbidden (Referer c
 WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
 >>>>>>> 5bbf426300c3d9acd88bcdaa5cfc0ba27cd00707
+WARNING 2026-08-09 09:59:21,736 log 8252 11920 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
+WARNING 2026-08-09 09:59:21,801 log 8252 16840 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 09:59:21,971 log 8252 17788 "GET /static/invitation/video/intro.ogv HTTP/1.1" 404 2005
+WARNING 2026-08-09 09:59:26,176 log 8252 10540 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+ERROR 2026-08-09 10:13:14,989 log 8252 4420 "GET / HTTP/1.1" 500 214508
+ERROR 2026-08-09 10:13:15,476 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:16,862 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:17,577 log 8252 4420 "GET / HTTP/1.1" 500 214496
+ERROR 2026-08-09 10:13:46,571 log 8252 4420 "GET / HTTP/1.1" 500 214114
+ERROR 2026-08-09 10:13:47,469 log 8252 4420 "GET / HTTP/1.1" 500 214251
+WARNING 2026-08-09 10:26:01,151 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:26:17,048 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:28:25,633 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+WARNING 2026-08-09 10:29:52,993 log 4132 17260 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
+ERROR 2026-08-09 10:30:01,970 log 4132 16188 You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2026-08-09 10:30:01,974 log 4132 5264 You're accessing the development server over HTTPS, but it only supports HTTP.

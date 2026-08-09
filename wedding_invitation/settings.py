@@ -196,127 +196,128 @@ ALLOWED_HOSTS = [
 # ]
 
 
-# ========== LOGGING CONFIGURATION ==========
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '{levelname} {asctime} {message}',
-            'style': '{',
-        },
-        'colored': {
-            'format': '{levelname} {asctime} {name} {message}',
-            'style': '{',
-        },
-    },
-    'filters': {
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
-        },
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse',
-        },
-    },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG' if DEBUG else 'INFO',
-            'filters': ['require_debug_true'],
-            'class': 'logging.StreamHandler',
-            'formatter': 'colored',
-        },
-        'file': {
-            'level': 'WARNING',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'django.log',
-            'maxBytes': 1024 * 1024 * 5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'verbose',
-        },
-        'error_file': {
-            'level': 'ERROR',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'errors.log',
-            'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
-            'formatter': 'verbose',
-        },
-        'request_file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'requests.log',
-            'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 5,
-            'formatter': 'simple',
-        },
-        'db_file': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': LOGS_DIR / 'database.log',
-            'maxBytes': 1024 * 1024 * 5,
-            'backupCount': 3,
-            'formatter': 'verbose',
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler',
-            'formatter': 'verbose',
-        },
-    },
-    'loggers': {
-        # لاگر اصلی جنگو
-        'django': {
-            'handlers': ['console', 'file'],
-            'propagate': True,
-            'level': 'INFO',
-        },
-        # لاگر درخواست‌ها
-        'django.request': {
-            'handlers': ['request_file', 'error_file'],
-            'level': 'ERROR',
-            'propagate': False,
-        },
-        # لاگر سرور
-        'django.server': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-            'propagate': False,
-        },
-        # لاگر دیتابیس
-        'django.db.backends': {
-            'handlers': ['db_file'],
-            'level': 'DEBUG' if DEBUG else 'WARNING',
-            'propagate': False,
-        },
-        # لاگر اختصاصی برای اپلیکیشن invitation
-        'invitation': {
-            'handlers': ['console', 'file', 'error_file'],
-            'level': 'DEBUG' if DEBUG else 'INFO',
-            'propagate': True,
-        },
-        # لاگر اختصاصی برای اپلیکیشن accounts (اگر دارید)
-        'accounts': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-        # لاگر عمومی برای پروژه
-        'project': {
-            'handlers': ['console', 'file', 'error_file'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-    },
-    'root': {
-        'handlers': ['console', 'file'],
-        'level': 'WARNING',
-    },
-}
+# # ========== LOGGING CONFIGURATION ==========
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+#             'style': '{',
+#         },
+#         'simple': {
+#             'format': '{levelname} {asctime} {message}',
+#             'style': '{',
+#         },
+#         'colored': {
+#             'format': '{levelname} {asctime} {name} {message}',
+#             'style': '{',
+#         },
+#     },
+#     'filters': {
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#         'require_debug_false': {
+#             '()': 'django.utils.log.RequireDebugFalse',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG' if DEBUG else 'INFO',
+#             'filters': ['require_debug_true'],
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'colored',
+#         },
+#         'file': {
+#             'level': 'WARNING',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': LOGS_DIR / 'django.log',
+#             'maxBytes': 1024 * 1024 * 5,  # 5 MB
+#             'backupCount': 5,
+#             'formatter': 'verbose',
+#         },
+#         'error_file': {
+#             'level': 'ERROR',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': LOGS_DIR / 'errors.log',
+#             'maxBytes': 1024 * 1024 * 5,
+#             'backupCount': 5,
+#             'formatter': 'verbose',
+#         },
+#         'request_file': {
+#             'level': 'INFO',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': LOGS_DIR / 'requests.log',
+#             'maxBytes': 1024 * 1024 * 5,
+#             'backupCount': 5,
+#             'formatter': 'simple',
+#         },
+#         'db_file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': LOGS_DIR / 'database.log',
+#             'maxBytes': 1024 * 1024 * 5,
+#             'backupCount': 3,
+#             'formatter': 'verbose',
+#         },
+#         'mail_admins': {
+#             'level': 'ERROR',
+#             'filters': ['require_debug_false'],
+#             'class': 'django.utils.log.AdminEmailHandler',
+#             'formatter': 'verbose',
+#         },
+#     },
+#     'loggers': {
+#         # لاگر اصلی جنگو
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'propagate': True,
+#             'level': 'INFO',
+#         },
+#         # لاگر درخواست‌ها
+#         'django.request': {
+#             'handlers': ['request_file', 'error_file'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#         # لاگر سرور
+#         'django.server': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#         # لاگر دیتابیس
+#         'django.db.backends': {
+#             'handlers': ['db_file'],
+#             'level': 'DEBUG' if DEBUG else 'WARNING',
+#             'propagate': False,
+#         },
+#         # لاگر اختصاصی برای اپلیکیشن invitation
+#         'invitation': {
+#             'handlers': ['console', 'file', 'error_file'],
+#             'level': 'DEBUG' if DEBUG else 'INFO',
+#             'propagate': True,
+#         },
+#         # لاگر اختصاصی برای اپلیکیشن accounts (اگر دارید)
+#         'accounts': {
+#             'handlers': ['console', 'file'],
+#             'level': 'INFO',
+#             'propagate': True,
+#         },
+#         # لاگر عمومی برای پروژه
+#         'project': {
+#             'handlers': ['console', 'file', 'error_file'],
+#             'level': 'INFO',
+#             'propagate': True,
+#         },
+#     },
+#     'root': {
+#         'handlers': ['console', 'file'],
+#         'level': 'WARNING',
+#     },
+# }
+SECURE_SSL_REDIRECT = False  # در محیط تولید به True تغییر دهید
 
 # ========== تنظیمات اضافی برای محیط تولید ==========
 # if not DEBUG:
@@ -360,11 +361,11 @@ MESSAGE_TAGS = {
 # ADMIN_EMAIL = 'admin@example.com'
 
 # ========== تنظیمات CSRF و Session ==========
-CSRF_TRUSTED_ORIGINS = [
-    'https://your-domain.com',
-    'http://localhost:8000',
-    'http://127.0.0.1:8000',
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     'https://your-domain.com',
+#     'http://localhost:8000',
+#     'http://127.0.0.1:8000',
+# ]
 
 # ========== تنظیمات آپلود فایل ==========
 FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10 MB
