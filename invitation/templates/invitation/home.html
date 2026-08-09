@@ -1204,11 +1204,14 @@ a{color:inherit;text-decoration:none}
   </footer>
 </div>
 
+
 <button class="music-btn" id="musicBtn" aria-label="پخش موسیقی" title="پخش موسیقی">&#9835;</button>
 <button class="back-to-top" id="backToTop" aria-label="بازگشت به بالا" title="بازگشت به بالا">&#8593;</button>
 {% if invitation.background_music %}
 <audio id="bgMusic" loop preload="none">
   <source src="{{ invitation.background_music.url }}" type="audio/mpeg">
+  <source src="/invitation/music/music.mp3" type="audio/mpeg">
+
 </audio>
 {% endif %}
 
