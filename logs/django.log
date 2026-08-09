@@ -812,6 +812,7 @@ Traceback (most recent call last):
   File "/home/seketal1/virtualenv/wedding_digital/3.10/lib/python3.10/site-packages/django/http/request.py", line 203, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'milad-maral.ir.seketalamanager.ir'. You may need to add 'milad-maral.ir.seketalamanager.ir' to ALLOWED_HOSTS.
+<<<<<<< HEAD
 ERROR 2026-08-08 16:59:37,388 log 12136 18176 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2026-08-08 16:59:37,390 log 12136 13356 You're accessing the development server over HTTPS, but it only supports HTTP.
 ERROR 2026-08-08 16:59:41,974 log 12136 6772 You're accessing the development server over HTTPS, but it only supports HTTP.
@@ -943,3 +944,19 @@ WARNING 2026-08-08 17:15:51,456 log 10272 20272 "GET /invitation/video/intro.mp4
 WARNING 2026-08-08 17:15:55,803 log 10272 20272 "GET /static/invitation/images/poster.jpg HTTP/1.1" 404 2011
 WARNING 2026-08-08 17:15:55,829 log 10272 6460 "GET /invitation/video/intro.mp4 HTTP/1.1" 404 2856
 WARNING 2026-08-08 17:15:55,830 log 10272 17788 "GET /static/invitation/music/wedding.mp3 HTTP/1.1" 404 2011
+=======
+WARNING 2026-08-08 16:58:21,113 log 3531645 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:58:21,113 log 3531645 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:58:31,626 log 3541200 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:58:31,626 log 3541200 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:58:47,070 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:58:47,070 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:02,336 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:02,336 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:12,760 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:12,760 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:23,035 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:23,035 log 3541245 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2026-08-08 16:59:28,283 log 3541244 140001451538240 Forbidden (Referer checking failed - no Referer.): /
+>>>>>>> 5bbf426300c3d9acd88bcdaa5cfc0ba27cd00707
