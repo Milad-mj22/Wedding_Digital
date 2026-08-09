@@ -1,6 +1,8 @@
 {% load static %}
 {% load shamsi %}
 
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
@@ -267,7 +269,589 @@ a{color:inherit;text-decoration:none}
   .timeline::before{right:20px;transform:none}
   .timeline-item,.timeline-item:nth-child(even){justify-content:flex-start;padding-right:56px;padding-left:0}
   .timeline-dot{right:auto;left:auto;right:14px;transform:none}
+
+
+.timeline-date {
+    font-feature-settings: "ss02";
+    -moz-font-feature-settings: "ss02";
+    -webkit-font-feature-settings: "ss02";
 }
+
+/* یا استفاده از فونت با پشتیبانی از اعداد فارسی */
+.timeline-date {
+    font-family: 'Vazirmatn', sans-serif;
+}
+}
+
+
+/* ============================================================
+   RSVP — MODERN MOBILE FRIENDLY
+   ============================================================ */
+
+.rsvp-section {
+  overflow:hidden;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(201,162,39,.10),
+      transparent 45%
+    ),
+    var(--ivory-deep);
+}
+
+.rsvp-header {
+  text-align:center;
+  padding:0 1rem;
+}
+
+.rsvp-ornament {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin:.2rem auto .7rem;
+}
+
+.rsvp-ornament span {
+  width:45px;
+  height:1px;
+  background:linear-gradient(
+    to left,
+    transparent,
+    var(--gold)
+  );
+}
+
+.rsvp-ornament span:last-child {
+  background:linear-gradient(
+    to right,
+    transparent,
+    var(--gold)
+  );
+}
+
+.rsvp-ornament i {
+  font-family:var(--f-serif);
+  font-size:1.5rem;
+  font-style:normal;
+  color:var(--wine);
+}
+
+
+/* Card */
+
+.rsvp-card-modern {
+  width:min(620px, calc(100% - 2rem));
+  margin:0 auto;
+  padding:0;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.92),
+      rgba(251,243,230,.82)
+    );
+
+  border:1px solid rgba(201,162,39,.28);
+  border-radius:30px;
+
+  box-shadow:
+    0 24px 65px rgba(74,22,34,.15),
+    0 4px 15px rgba(74,22,34,.06);
+}
+
+
+/* Card Header */
+
+.rsvp-card-top {
+  text-align:center;
+  padding:2rem 1.5rem 1.5rem;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(109,35,51,.06),
+      transparent
+    );
+
+  border-bottom:1px solid rgba(201,162,39,.16);
+}
+
+.rsvp-heart {
+  width:58px;
+  height:58px;
+
+  margin:0 auto .8rem;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  color:var(--gold-soft);
+  background:var(--wine);
+
+  font-family:var(--f-serif);
+  font-size:2rem;
+
+  box-shadow:
+    0 8px 22px rgba(109,35,51,.25),
+    0 0 0 7px rgba(201,162,39,.10);
+}
+
+.rsvp-card-top h3 {
+  color:var(--wine);
+  font-size:1.45rem;
+  margin-bottom:.25rem;
+}
+
+.rsvp-card-top p {
+  color:var(--ink-soft);
+  font-size:.88rem;
+}
+
+
+/* Form */
+
+.rsvp-form {
+  padding:1.5rem;
+}
+
+.rsvp-field {
+  margin-bottom:1.35rem;
+}
+
+.rsvp-field label {
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+
+  margin-bottom:.55rem;
+
+  color:var(--wine-deep);
+  font-size:.9rem;
+  font-weight:600;
+}
+
+.rsvp-field label span {
+  color:var(--ink-soft);
+  font-size:.72rem;
+  font-weight:400;
+}
+
+
+/* Input */
+
+.rsvp-input-wrap {
+  position:relative;
+}
+
+.rsvp-input-icon {
+  position:absolute;
+  right:1rem;
+  top:50%;
+  transform:translateY(-50%);
+
+  color:var(--gold);
+  font-size:1.15rem;
+
+  pointer-events:none;
+}
+
+.rsvp-input {
+  width:100%;
+  min-height:54px;
+
+  border:1.5px solid rgba(109,35,51,.14);
+  border-radius:15px;
+
+  background:rgba(255,255,255,.75);
+
+  color:var(--ink);
+  font-family:var(--f-sans);
+  font-size:.92rem;
+
+  padding:.85rem 1rem;
+
+  outline:none;
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.rsvp-input-wrap .rsvp-input {
+  padding-right:3rem;
+}
+
+.rsvp-input::placeholder {
+  color:#a99b91;
+}
+
+.rsvp-input:focus {
+  background:#fff;
+  border-color:var(--gold);
+  box-shadow:
+    0 0 0 4px rgba(201,162,39,.10);
+}
+
+.rsvp-textarea {
+  min-height:105px;
+  resize:vertical;
+  line-height:1.9;
+}
+
+
+/* Attendance Options */
+
+.attendance-options {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.75rem;
+}
+
+.attendance-option {
+  position:relative;
+  margin:0 !important;
+  cursor:pointer;
+}
+
+.attendance-option input {
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.attendance-card {
+  min-height:105px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  position:relative;
+
+  padding:1rem .6rem;
+
+  text-align:center;
+
+  background:rgba(255,255,255,.65);
+
+  border:1.5px solid rgba(109,35,51,.13);
+  border-radius:17px;
+
+  transition:
+    all .25s ease;
+}
+
+.attendance-icon {
+  width:34px;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:.45rem;
+
+  border-radius:50%;
+
+  background:var(--ivory-deep);
+  color:var(--wine);
+
+  font-family:var(--f-serif);
+  font-size:1.25rem;
+
+  transition:all .25s ease;
+}
+
+.attendance-text {
+  display:flex;
+  flex-direction:column;
+  gap:.15rem;
+}
+
+.attendance-text strong {
+  color:var(--wine-deep);
+  font-size:.82rem;
+  font-weight:600;
+}
+
+.attendance-text small {
+  color:var(--ink-soft);
+  font-size:.67rem;
+  line-height:1.6;
+}
+
+.attendance-check {
+  position:absolute;
+  top:8px;
+  left:8px;
+
+  width:21px;
+  height:21px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:var(--wine);
+  color:#fff;
+
+  font-size:.7rem;
+
+  opacity:0;
+  transform:scale(.5);
+
+  transition:all .25s ease;
+}
+
+
+/* Selected */
+
+.attendance-option input:checked + .attendance-card {
+  border-color:var(--gold);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.95),
+      rgba(241,218,210,.45)
+    );
+
+  box-shadow:
+    0 8px 24px rgba(109,35,51,.10),
+    inset 0 0 0 1px rgba(201,162,39,.15);
+
+  transform:translateY(-2px);
+}
+
+.attendance-option input:checked + .attendance-card
+.attendance-icon {
+  background:var(--wine);
+  color:var(--gold-soft);
+}
+
+.attendance-option input:checked + .attendance-card
+.attendance-check {
+  opacity:1;
+  transform:scale(1);
+}
+
+
+/* Submit */
+
+.rsvp-submit {
+  width:100%;
+  min-height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:.7rem;
+
+  border:0;
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--wine),
+      var(--wine-deep)
+    );
+
+  color:#fff;
+
+  font-family:var(--f-sans);
+  font-size:.95rem;
+  font-weight:600;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 12px 28px rgba(109,35,51,.24);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.rsvp-submit:hover {
+  transform:translateY(-2px);
+  box-shadow:
+    0 16px 34px rgba(109,35,51,.30);
+}
+
+.rsvp-submit:active {
+  transform:translateY(0);
+}
+
+.rsvp-submit-heart {
+  font-family:var(--f-serif);
+  font-size:1.3rem;
+  color:var(--gold-soft);
+}
+
+
+/* Bottom */
+
+.rsvp-card-bottom {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.7rem;
+
+  padding:1rem;
+
+  border-top:1px solid rgba(201,162,39,.14);
+
+  color:var(--ink-soft);
+  font-family:var(--f-display);
+  font-size:.85rem;
+}
+
+.rsvp-card-bottom span:nth-child(2) {
+  color:var(--gold);
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media(max-width:576px){
+
+  .rsvp-section {
+    padding-top:4rem;
+    padding-bottom:4rem;
+  }
+
+  .rsvp-card-modern {
+    width:calc(100% - 1.5rem);
+    border-radius:24px;
+  }
+
+  .rsvp-card-top {
+    padding:1.7rem 1rem 1.3rem;
+  }
+
+  .rsvp-heart {
+    width:52px;
+    height:52px;
+    font-size:1.75rem;
+  }
+
+  .rsvp-card-top h3 {
+    font-size:1.3rem;
+  }
+
+  .rsvp-form {
+    padding:1.15rem;
+  }
+
+  .rsvp-field {
+    margin-bottom:1.15rem;
+  }
+
+  .rsvp-field label {
+    font-size:.84rem;
+  }
+
+  .rsvp-input {
+    min-height:52px;
+    font-size:.88rem;
+    border-radius:14px;
+  }
+
+  .attendance-options {
+    grid-template-columns:1fr;
+    gap:.65rem;
+  }
+
+  .attendance-card {
+    min-height:74px;
+
+    flex-direction:row;
+    justify-content:flex-start;
+
+    text-align:right;
+
+    padding:.7rem .85rem;
+  }
+
+  .attendance-icon {
+    flex:0 0 38px;
+    width:38px;
+    height:38px;
+
+    margin:0 .65rem 0 0;
+  }
+
+  .attendance-text {
+    align-items:flex-start;
+  }
+
+  .attendance-text strong {
+    font-size:.82rem;
+  }
+
+  .attendance-text small {
+    font-size:.68rem;
+  }
+
+  .attendance-check {
+    top:50%;
+    left:10px;
+    transform:translateY(-50%) scale(.5);
+  }
+
+  .attendance-option input:checked + .attendance-card
+  .attendance-check {
+    transform:translateY(-50%) scale(1);
+  }
+
+  .rsvp-submit {
+    min-height:54px;
+    border-radius:15px;
+    font-size:.9rem;
+  }
+
+  .rsvp-card-bottom {
+    font-size:.76rem;
+    gap:.5rem;
+    padding:.85rem .5rem;
+  }
+}
+
+
+/* Very small phones */
+
+@media(max-width:360px){
+
+  .rsvp-card-modern {
+    width:calc(100% - 1rem);
+  }
+
+  .rsvp-form {
+    padding:.9rem;
+  }
+
+  .rsvp-card-top h3 {
+    font-size:1.2rem;
+  }
+
+  .attendance-card {
+    padding:.6rem .7rem;
+  }
+}
+
+
+
 </style>
 </head>
 <body>
@@ -289,7 +873,6 @@ a{color:inherit;text-decoration:none}
       <div class="flap-container">
         <div class="envelope-flap">
           <div class="flap-front"><span class="initials">M &amp; M</span></div>
-          <div class="flap-back">به عروسی ما دعوتید</div>
         </div>
       </div>
       <div class="seal">
@@ -336,7 +919,7 @@ a{color:inherit;text-decoration:none}
     <div class="hero-content" data-aos="fade-up">
       <span class="hero-eyebrow">دعوت به جشن عروسی</span>
       <h1>{{ invitation.groom_name }}<span class="amp">&amp;</span>{{ invitation.bride_name }}</h1>
-      <div class="date-chip">{{ invitation.wedding_date|to_shamsi }}</div>
+        <div class="date-chip">{{ invitation.wedding_date|to_shamsi|to_persian_numbers }}</div>
       <p class="sub-text">حضور گرم شما، بهترین هدیه‌ی آن شب برای ماست</p>
     </div>
     <div class="scroll-indicator" aria-hidden="true"></div>
@@ -380,7 +963,9 @@ a{color:inherit;text-decoration:none}
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="timeline-event">{{ event.title }}</div>
-          <div class="timeline-date">{{ event.date|to_shamsi }} &nbsp;|&nbsp; {{ event.time }}</div>
+        <div class="timeline-date" style="font-family: 'Vazirmatn', sans-serif; font-variant-numeric: oldstyle-nums;">
+            {{ event.date|to_shamsi }} &nbsp;|&nbsp; از ساعت 7  تا 12 شب
+        </div>
           <div class="place">{{ event.venue }}</div>
         </div>
       </div>
@@ -480,33 +1065,136 @@ a{color:inherit;text-decoration:none}
   </section>
 
   <!-- RSVP -->
-  <section class="section section-alt" id="rsvp">
-    <span class="section-eyebrow">افتخار حضور</span>
-    <h2 class="section-title">به ما خبر بدهید</h2>
-    <p class="section-lead">لطفاً تا پیش از مراسم، حضور یا عدم حضورتان را برای ما ثبت کنید.</p>
-    <div class="rsvp-card" data-aos="fade-up">
-      <form method="post" action="{% if invitation.rsvp_url %}{{ invitation.rsvp_url }}{% else %}.{% endif %}">
-        {% csrf_token %}
-        <div class="mb-3">
-          <label class="form-label" for="rsvp-name">نام و نام خانوادگی</label>
-          <input type="text" class="form-control" id="rsvp-name" name="full_name" required>
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="rsvp-status">آیا افتخار حضور می‌دهید؟</label>
-          <select class="form-select" id="rsvp-status" name="attending">
-            <option value="yes">بله، با کمال میل</option>
-            <option value="no">متاسفانه نمی‌توانم</option>
-          </select>
-        </div>
+<!-- RSVP / HONOR OF PRESENCE -->
+<section class="section section-alt rsvp-section" id="rsvp">
 
-        <div class="mb-4">
-          <label class="form-label" for="rsvp-note">پیام برای عروس و داماد (اختیاری)</label>
-          <textarea class="form-control" id="rsvp-note" name="note" rows="3"></textarea>
-        </div>
-        <button type="submit" class="btn-gold w-100">ثبت پاسخ</button>
-      </form>
+  <div class="rsvp-header" data-aos="fade-up">
+    <span class="section-eyebrow">افتخار حضور</span>
+
+    <div class="rsvp-ornament">
+      <span></span>
+      <i>♡</i>
+      <span></span>
     </div>
-  </section>
+
+    <h2 class="section-title">در کنار ما باشید</h2>
+
+    <p class="section-lead">
+      حضور شما، زیبایی این شب را برای ما کامل‌تر می‌کند.
+      لطفاً حضور خود را به ما اطلاع دهید.
+    </p>
+  </div>
+
+  <div class="rsvp-card rsvp-card-modern" data-aos="fade-up">
+
+    <div class="rsvp-card-top">
+      <div class="rsvp-heart">♡</div>
+      <h3>منتظر دیدار شما هستیم</h3>
+      <p>لطفاً فرم زیر را تکمیل کنید</p>
+    </div>
+
+    <form method="post"
+          action="{% if invitation.rsvp_url %}{{ invitation.rsvp_url }}{% else %}.{% endif %}"
+          class="rsvp-form">
+
+      {% csrf_token %}
+
+      <!-- Name -->
+      <div class="rsvp-field">
+        <label for="rsvp-name">نام و نام خانوادگی</label>
+
+        <div class="rsvp-input-wrap">
+          <span class="rsvp-input-icon">♧</span>
+
+          <input
+            type="text"
+            class="rsvp-input"
+            id="rsvp-name"
+            name="full_name"
+            placeholder="نام خود را وارد کنید"
+            autocomplete="name"
+            required>
+        </div>
+      </div>
+
+      <!-- Attendance -->
+      <div class="rsvp-field">
+        <label>آیا افتخار حضور می‌دهید؟</label>
+
+        <div class="attendance-options">
+
+          <label class="attendance-option">
+            <input
+              type="radio"
+              name="attending"
+              value="yes"
+              checked>
+
+            <span class="attendance-card">
+              <span class="attendance-icon">♡</span>
+
+              <span class="attendance-text">
+                <strong>با کمال میل</strong>
+                <small>در جشن شما حاضر خواهم بود</small>
+              </span>
+
+              <span class="attendance-check">✓</span>
+            </span>
+          </label>
+
+          <label class="attendance-option">
+            <input
+              type="radio"
+              name="attending"
+              value="no">
+
+            <span class="attendance-card">
+              <span class="attendance-icon">♡</span>
+
+              <span class="attendance-text">
+                <strong>متأسفانه نمی‌توانم</strong>
+                <small>امکان حضور در مراسم را ندارم</small>
+              </span>
+
+              <span class="attendance-check">✓</span>
+            </span>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="rsvp-field">
+        <label for="rsvp-note">
+          پیام شما
+          <span>اختیاری</span>
+        </label>
+
+        <textarea
+          class="rsvp-input rsvp-textarea"
+          id="rsvp-note"
+          name="note"
+          rows="3"
+          placeholder="اگر پیامی برای عروس و داماد دارید..."></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="rsvp-submit">
+        <span>ثبت افتخار حضور</span>
+        <span class="rsvp-submit-heart">♡</span>
+      </button>
+
+    </form>
+
+    <div class="rsvp-card-bottom">
+      <span>با عشق</span>
+      <span>✦</span>
+      <span>{{ invitation.groom_name }} و {{ invitation.bride_name }}</span>
+    </div>
+
+  </div>
+
+</section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -763,6 +1451,28 @@ document.addEventListener('click', function playOnFirstClick() {
     document.removeEventListener('click', playOnFirstClick);
   }
 }, { once: true });
+
+function convertToPersianNumbers() {
+    const persianNumbers = {
+        '0': '۰', '1': '۱', '2': '۲', '3': '۳', '4': '۴',
+        '5': '۵', '6': '۶', '7': '۷', '8': '۸', '9': '۹'
+    };
+    
+    // پیدا کردن همه المان‌های timeline-date
+    const dateElements = document.querySelectorAll('.timeline-date');
+    
+    dateElements.forEach(element => {
+        let text = element.textContent;
+        // جایگزینی اعداد انگلیسی به فارسی
+        for (let en in persianNumbers) {
+            text = text.replace(new RegExp(en, 'g'), persianNumbers[en]);
+        }
+        element.textContent = text;
+    });
+}
+
+// اجرا بعد از بارگذاری کامل صفحه
+document.addEventListener('DOMContentLoaded', convertToPersianNumbers);
 
 
 </script>

@@ -2,14 +2,14 @@
 import jdatetime
 from django import template
 from django.utils import timezone
-
+import datetime
 register = template.Library()
 
 
 @register.filter(name='to_shamsi')
 def to_shamsi(value, fmt="%d %B %Y"):
     """
-    تبدیل تاریخ میلادی به شمسی.
+    تبدیل تاریخ میلادی به شمسی با نام ماه‌های فارسی.
     استفاده: {{ invitation.wedding_date|to_shamsi }}
     """
     if not value:
@@ -24,8 +24,40 @@ def to_shamsi(value, fmt="%d %B %Y"):
     except Exception:
         return value
 
-    return j_date.strftime(fmt)
-
+    # دیکشنری ترجمه ماه‌های شمسی به فارسی
+    persian_months = {
+        'Farvardin': 'فروردین',
+        'Ordibehesht': 'اردیبهشت',
+        'Khordad': 'خرداد',
+        'Tir': 'تیر',
+        'Mordad': 'مرداد',
+        'Shahrivar': 'شهریور',
+        'Mehr': 'مهر',
+        'Aban': 'آبان',
+        'Azar': 'آذر',
+        'Dey': 'دی',
+        'Bahman': 'بهمن',
+        'Esfand': 'اسفند'
+    }
+    
+    # تبدیل عدد به فارسی
+    persian_numbers = {
+        '0': '۰', '1': '۱', '2': '۲', '3': '۳', '4': '۴',
+        '5': '۵', '6': '۶', '7': '۷', '8': '۸', '9': '۹'
+    }
+    
+    # دریافت تاریخ به صورت رشته
+    result = j_date.strftime(fmt)
+    
+    # جایگزینی نام ماه‌ها به فارسی
+    for eng, per in persian_months.items():
+        result = result.replace(eng, per)
+    
+    # جایگزینی اعداد انگلیسی به فارسی
+    for eng, per in persian_numbers.items():
+        result = result.replace(eng, per)
+    
+    return result
 
 @register.filter(name='to_shamsi_short')
 def to_shamsi_short(value):
@@ -92,3 +124,29 @@ def shamsi_date(value, arg=None):
     except Exception as e:
         # If conversion fails, return the original value
         return value
+
+
+@register.filter
+def to_persian_numbers(value):
+    """تبدیل اعداد انگلیسی به فارسی"""
+    persian_numbers = {
+        '0': '۰',
+        '1': '۱',
+        '2': '۲',
+        '3': '۳',
+        '4': '۴',
+        '5': '۵',
+        '6': '۶',
+        '7': '۷',
+        '8': '۸',
+        '9': '۹'
+    }
+    
+    # اگر مقدار عددی باشد، به رشته تبدیل کن
+    value_str = str(value)
+    
+    # جایگزینی اعداد
+    for english, persian in persian_numbers.items():
+        value_str = value_str.replace(english, persian)
+    
+    return value_str
