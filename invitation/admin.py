@@ -6,7 +6,7 @@ from .models import Invitation, InvitationEvent, GalleryPhoto, Rsvp
 
 
 # ============================================================
-# INLINES — برای مدیریت مراسم‌ها و گالری از داخل صفحه‌ی دعوتنامه
+# INLINES
 # ============================================================
 class InvitationEventInline(admin.TabularInline):
     model = InvitationEvent
@@ -51,11 +51,17 @@ class RsvpInline(admin.TabularInline):
 @admin.register(Invitation)
 class InvitationAdmin(admin.ModelAdmin):
     list_display = (
-        'couple_display', 'main_photo_thumb', 'wedding_date',
-        'venue_name', 'events_count', 'gallery_count', 'rsvp_summary',
+        'couple_display', 
+        'main_photo_thumb', 
+        'wedding_date',
+        'venue_name', 
+        'events_count', 
+        'gallery_count', 
+        'rsvp_summary',
+        'has_rsvp_url',  # اضافه شد
     )
     list_display_links = ('couple_display',)
-    search_fields = ('bride_name', 'groom_name', 'venue_name', 'venue_address')
+    search_fields = ('bride_name', 'groom_name', 'venue_name', 'venue_address', 'rsvp_url')
     list_filter = ('wedding_date',)
     date_hierarchy = 'wedding_date'
     readonly_fields = ('created_at', 'main_photo_preview', 'bride_photo_preview', 'groom_photo_preview')
@@ -80,6 +86,12 @@ class InvitationAdmin(admin.ModelAdmin):
         ("رسانه", {
             'fields': ('intro_video', 'background_music'),
             'classes': ('collapse',),
+        }),
+        # بخش جدید برای تنظیمات RSVP
+        ("تنظیمات RSVP", {
+            'fields': ('rsvp_url',),
+            'classes': ('collapse',),
+            'description': 'آدرسی که فرم اعلام حضور به آن ارسال می‌شود. اگر خالی باشد، فرم به همان صفحه فعلی ارسال می‌شود.',
         }),
         ("اطلاعات سیستمی", {
             'fields': ('created_at',),
@@ -144,6 +156,10 @@ class InvitationAdmin(admin.ModelAdmin):
             yes, no,
         )
 
+    @admin.display(description="لینک RSVP", boolean=True)
+    def has_rsvp_url(self, obj):
+        return bool(obj.rsvp_url)
+
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         return qs.annotate(
@@ -153,12 +169,12 @@ class InvitationAdmin(admin.ModelAdmin):
 
 
 # ============================================================
-# RSVP ADMIN — لیست مستقل پاسخ‌های حضور با فیلتر و خروجی سریع
+# RSVP ADMIN
 # ============================================================
 @admin.register(Rsvp)
 class RsvpAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'invitation', 'attending_badge', 'guests_count',
+        'name', 'invitation', 'attending', 'guests_count',
         'phone', 'email', 'created_at',
     )
     list_filter = ('attending', 'invitation', 'created_at')
@@ -169,10 +185,6 @@ class RsvpAdmin(admin.ModelAdmin):
     actions = ['mark_as_attending', 'mark_as_not_attending']
 
     @admin.display(description="حضور", ordering='attending')
-    def attending_badge(self, obj):
-        if obj.attending:
-            return format_html('<span style="color:#1a7f37;font-weight:700;">✔ می‌آید</span>')
-        return format_html('<span style="color:#c0392b;font-weight:700;">✘ نمی‌آید</span>')
 
     @admin.action(description="علامت‌گذاری به‌عنوان «حاضر می‌شوند»")
     def mark_as_attending(self, request, queryset):
@@ -186,7 +198,7 @@ class RsvpAdmin(admin.ModelAdmin):
 
 
 # ============================================================
-# مدیریت مستقل مراسم‌ها و گالری (در صورت نیاز به دسترسی جدا)
+# مدیریت مستقل
 # ============================================================
 @admin.register(InvitationEvent)
 class InvitationEventAdmin(admin.ModelAdmin):

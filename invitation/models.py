@@ -50,6 +50,8 @@ class Invitation(models.Model):
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
+    rsvp_url = models.TextField(max_length=500, blank=True, null=True, verbose_name="آدرس RSVP")
+
 
     def __str__(self):
         return f"{self.bride_name} & {self.groom_name}"
