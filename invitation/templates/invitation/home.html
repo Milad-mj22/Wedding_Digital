@@ -114,9 +114,34 @@ a{color:inherit;text-decoration:none}
 .play-btn-overlay:hover{background:rgba(255,255,255,.2);transform:translate(-50%,-50%) scale(1.08)}
 .play-btn-overlay svg{width:44%;height:44%;fill:#fff;margin-right:-6%}
 @keyframes pulsePlay{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.06)}}
-.skip-btn{position:absolute;bottom:9%;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.14);backdrop-filter:blur(10px);color:#fff;border:1px solid rgba(255,255,255,.4);padding:.7rem 2rem;border-radius:50px;font-size:clamp(.9rem,2vw,1.05rem);cursor:pointer;z-index:20;transition:.3s;font-weight:500}
-.skip-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.skip-btn {
+  position: absolute;
+  bottom: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: .7rem 2rem;
+  border-radius: 50px;
+  font-size: clamp(.9rem, 2vw, 1.05rem);
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
+.skip-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transform: translateX(-50%) scale(1.03);
+}
 /* ============================================================
    HERO
    ============================================================ */
@@ -851,6 +876,34 @@ a{color:inherit;text-decoration:none}
 }
 
 
+/* ============================================================
+   PLAY KEY — دکمه پخش به‌جای پاکت
+   ============================================================ */
+.play-key{
+  position:relative;
+  width:min(150px,34vw);
+  aspect-ratio:1/1;
+  border-radius:50%;
+  border:2px solid var(--gold);
+  background:radial-gradient(circle at 32% 28%,var(--wine),var(--wine-deep));
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:0 18px 40px rgba(74,22,34,.35), 0 0 0 8px rgba(201,162,39,.14);
+  transition:transform .3s ease, box-shadow .3s ease;
+  animation:playPulse 2.4s ease-in-out infinite;
+}
+.play-key:hover{transform:scale(1.06);box-shadow:0 22px 46px rgba(74,22,34,.4), 0 0 0 10px rgba(201,162,39,.2)}
+.play-key svg{width:38%;height:38%;fill:var(--gold-soft);margin-right:-6%;filter:drop-shadow(0 3px 6px rgba(0,0,0,.35))}
+.play-key-ring{
+  position:absolute;inset:-14px;
+  border:1.5px solid rgba(201,162,39,.5);
+  border-radius:50%;
+  animation:ringPulse 2.4s ease-in-out infinite;
+}
+@keyframes playPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes ringPulse{0%{transform:scale(.9);opacity:.8}70%{transform:scale(1.25);opacity:0}100%{opacity:0}}
+
+
 
 </style>
 </head>
@@ -863,6 +916,17 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <!-- STAMP / ENVELOPE SCREEN — این صفحه اول از همه نمایش داده می‌شود -->
+<<<<<<< HEAD
+
+=======
+<div id="stamp-screen">
+  <button class="play-key" id="playKeyBtn" aria-label="پخش دعوت‌نامه">
+    <span class="play-key-ring"></span>
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+  <div class="prompt-text">برای مشاهده‌ی دعوت‌نامه لمس کنید</div>
+</div>
+>>>>>>> 527d5c5abb7e5c56d12dbc1928519b0957c4cb8d
 
 
 <canvas id="petals-canvas"></canvas>
@@ -876,8 +940,14 @@ a{color:inherit;text-decoration:none}
        
        autoplay
        poster="{% if invitation.photo_main %}{{ invitation.photo_main.url }}{% endif %}">
+<<<<<<< HEAD
   <source src="{% static 'invitation/video/intro.mp4' %}" type="video/mp4" />
+=======
+  <source src="{% static 'invitation/video/intro.webm' %}" type="video/webm" />
+    <source src="{% static 'invitation/video/intro.mp4' %}" type="video/mp4" />
+>>>>>>> 527d5c5abb7e5c56d12dbc1928519b0957c4cb8d
   <source src="/invitation/video/intro.mp4" type="video/mp4" />
+
 </video>
   <!-- دکمه پلی رو مخفی می‌کنیم ولی برای مواقع ضروری نگه می‌داریم -->
   <div class="play-btn-overlay" id="playBtn" style="display:none;">
@@ -1210,7 +1280,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ---------- Intro flow: envelope first, then video, then the site ---------- */
 /* ---------- Intro flow: envelope first, then video, then the site ---------- */
 var stampScreen = document.getElementById('stamp-screen');
-var envelopeWrapper = document.getElementById('envelopeWrapper');
+
 var mainContent = document.getElementById('main-content');
 var videoScreen = document.getElementById('video-screen');
 var playBtn = document.getElementById('playBtn');
@@ -1219,27 +1289,24 @@ var introVideo = document.getElementById('introVideo');
 
 document.body.style.overflow = 'hidden';
 
-stampScreen.addEventListener('click', function () {
+var playKeyBtn = document.getElementById('playKeyBtn');
+
+playKeyBtn.addEventListener('click', function () {
   if (stampScreen.classList.contains('opening')) return;
-  stampScreen.classList.add('opening');
-  envelopeWrapper.classList.add('zoom-effect');
-  setTimeout(function () {
-    stampScreen.classList.add('hidden');
-    if (videoScreen) {
-      videoScreen.classList.add('active');
-      // پخش اتوماتیک ویدیو با تاخیر اندک برای اطمینان از نمایش
-      setTimeout(function() {
-        introVideo.play().catch(function(e) {
-          console.log('Auto-play prevented:', e);
-          // اگر اتوماتیک پلی نشد، دکمه پلی رو نشون بده
-          playBtn.style.display = 'flex';
-        });
-      }, 300);
-    } else {
-      revealMain();
-    }
-  }, 1300);
+  stampScreen.classList.add('opening', 'hidden');
+  if (videoScreen) {
+    videoScreen.classList.add('active');
+    setTimeout(function () {
+      introVideo.play().catch(function (e) {
+        console.log('Auto-play prevented:', e);
+        playBtn.style.display = 'flex';
+      });
+    }, 250);
+  } else {
+    revealMain();
+  }
 });
+
 
 // وقتی ویدیو تموم شد، سایت رو نشون بده
 introVideo.addEventListener('ended', function () {
