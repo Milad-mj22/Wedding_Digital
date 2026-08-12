@@ -863,32 +863,12 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <!-- STAMP / ENVELOPE SCREEN — این صفحه اول از همه نمایش داده می‌شود -->
-<div id="stamp-screen">
-  <div class="envelope-wrapper" id="envelopeWrapper">
-    <div class="envelope" id="envelope">
-      <div class="envelope-body">
-        <div class="ribbon-v"></div>
-        <div class="ribbon-h"></div>
-      </div>
-      <div class="flap-container">
-        <div class="envelope-flap">
-          <div class="flap-front"><span class="initials">M &amp; M</span></div>
-        </div>
-      </div>
-      <div class="seal">
-        <div class="seal-half seal-left"></div>
-        <div class="seal-half seal-right"></div>
-        <div class="seal-design">&#9825;</div>
-      </div>
-    </div>
-  </div>
-  <div class="prompt-text">برای گشودن دعوت‌نامه لمس کنید</div>
-</div>
+
 
 <canvas id="petals-canvas"></canvas>
 
 <!-- VIDEO INTRO — بعد از باز شدن پاکت نمایش داده می‌شود -->
-<div id="video-screen">
+<div id="videoScreen ">
 <video id="introVideo" 
        playsinline 
        webkit-playsinline
@@ -896,7 +876,7 @@ a{color:inherit;text-decoration:none}
        
        autoplay
        poster="{% if invitation.photo_main %}{{ invitation.photo_main.url }}{% endif %}">
-  <source src="{% static 'invitation/video/intro.webm' %}" type="video/webm" />
+  <source src="{% static 'invitation/video/intro.mp4' %}" type="video/mp4" />
   <source src="/invitation/video/intro.mp4" type="video/mp4" />
 </video>
   <!-- دکمه پلی رو مخفی می‌کنیم ولی برای مواقع ضروری نگه می‌داریم -->
