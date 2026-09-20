@@ -1,93 +1,767 @@
-# Wedding_digital
+# 💍 Wedding Digital Invitation
 
+<p align="center">
+  <strong>کارت عروسی دیجیتال</strong>
+</p>
 
+<p align="center">
+  A modern, elegant and fully responsive Persian digital wedding invitation built with Django.
+</p>
 
-## Getting started
+---
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## ✨ Overview
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+**Wedding Digital** is a web-based digital wedding invitation designed for creating a beautiful and interactive wedding experience for guests.
 
-## Add your files
+The project is built with **Django** and provides a customizable invitation page where wedding information, couple photos, ceremony events, gallery images, music, intro video and RSVP responses can be managed through the Django Admin panel.
 
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+The invitation is designed primarily for **Persian / RTL audiences** and includes Persian calendar support and Persian typography.
 
+---
+
+## 🌹 Features
+
+### 💌 Interactive Invitation Opening
+
+The invitation starts with an animated envelope experience.
+
+* Animated wedding envelope
+* Wax seal animation
+* Opening transition
+* Personalized couple initials
+* Preloader
+* Smooth transition into the main invitation
+
+---
+
+### 🎬 Intro Video
+
+An optional introduction video can be displayed before the main invitation.
+
+Supported media can be uploaded through the Django Admin panel.
+
+Recommended format:
+
+```text
+MP4
 ```
-cd existing_repo
-git remote add origin https://hamgit.ir/m.moltaji/wedding_digital.git
-git branch -M main
-git push -uf origin main
+
+---
+
+### 👫 Couple Information
+
+The invitation supports detailed information about the bride and groom:
+
+* Bride name
+* Groom name
+* Bride photo
+* Groom photo
+* Bride's parents
+* Groom's parents
+
+---
+
+### ⏳ Wedding Countdown
+
+A live countdown section displays the remaining time until the wedding ceremony.
+
+The wedding date and time are managed from the admin panel.
+
+---
+
+### 📖 Love Story
+
+A dedicated section is available for displaying the couple's story or a personalized message.
+
+The content can be changed directly from the admin panel.
+
+---
+
+### 📅 Wedding Events Timeline
+
+Multiple events can be added to an invitation.
+
+For example:
+
+```text
+عقد
+حنابندان
+مراسم عروسی
+پذیرایی
 ```
 
-## Integrate with your tools
+Each event can contain:
 
-* [Set up project integrations](https://hamgit.ir/m.moltaji/wedding_digital/-/settings/integrations)
+* Event title
+* Date and time
+* Venue
+* Display order
 
-## Collaborate with your team
+Events are automatically ordered by their configured order and date.
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+---
 
-## Test and Deploy
+### 📸 Photo Gallery
 
-Use the built-in continuous integration in GitLab.
+The invitation includes a responsive photo gallery with:
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+* Multiple photos
+* Captions
+* Custom ordering
+* Responsive grid
+* Image hover effects
+* Full-screen lightbox
 
-***
+Gallery images are managed through the Django Admin panel.
 
-# Editing this README
+---
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### 🗺️ Wedding Venue
 
-## Suggestions for a good README
+The venue section supports:
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+* Venue name
+* Full address
+* Google Maps embed
+* Venue information
 
-## Name
-Choose a self-explaining name for your project.
+The Google Maps iframe can be configured from the admin panel.
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+---
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### 🎁 Scratch Card / Gift Message
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+The invitation includes an interactive scratch-card section that can reveal a personalized gift message.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+The message can be configured through the admin panel.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+---
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+### 🎵 Background Music
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+An optional background music file can be uploaded and played from the invitation.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Recommended format:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+```text
+MP3
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+The interface also includes a floating music control for controlling playback.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+---
 
-## License
-For open source projects, say how it is licensed.
+### 📝 RSVP
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Guests can submit their attendance information directly from the invitation.
+
+The RSVP system supports:
+
+* Guest name
+* Email
+* Phone number
+* Attendance status
+* Number of accompanying guests
+* Guest message
+* Submission date
+
+RSVP responses are stored in the database and can be reviewed from Django Admin.
+
+There is also an AJAX-based RSVP endpoint:
+
+```text
+POST /rsvp/<invitation_id>/
+```
+
+The endpoint returns a JSON response after successfully storing the guest's response.
+
+---
+
+## 🎨 Design
+
+The invitation uses a luxury wedding-inspired visual system.
+
+### Main colors
+
+```text
+Wine       #6d2333
+Deep Wine  #4a1622
+Gold       #c9a227
+Soft Gold  #e3c876
+Ivory      #fbf3e6
+Blush      #f1dad2
+```
+
+The interface uses:
+
+* Persian RTL layout
+* Elegant typography
+* Glassmorphism elements
+* Gold accents
+* Smooth animations
+* Responsive layouts
+* Interactive UI components
+
+The template uses **Vazirmatn**, **Noto Nastaliq Urdu**, and **Playfair Display** typography.
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+
+* Python
+* Django 5.2.16
+* SQLite
+* Django ORM
+* Django Admin
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+* Django Templates
+* Bootstrap-based form styling
+* AOS animations
+
+### Media
+
+* Pillow
+* HTML5 Video
+* HTML5 Audio
+* Canvas-based interactions
+
+### Static Files
+
+* WhiteNoise
+
+### Persian Date
+
+* jdatetime
+* Custom Django template filters for Shamsi dates
+
+The project explicitly configures the Persian locale and `Asia/Tehran` timezone.
+
+---
+
+## 📁 Project Structure
+
+```text
+Wedding_Digital/
+│
+├── invitation/
+│   ├── migrations/
+│   ├── static/
+│   ├── templates/
+│   │   └── invitation/
+│   │       └── home.html
+│   │
+│   ├── templatetags/
+│   │   └── shamsi.py
+│   │
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── urls.py
+│   └── views.py
+│
+├── wedding_invitation/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── asgi.py
+│   └── wsgi.py
+│
+├── media/
+│   └── invitation/
+│
+├── staticfiles/
+│
+├── logs/
+│
+├── db.sqlite3
+├── manage.py
+├── passenger_wsgi.py
+└── README.md
+```
+
+---
+
+## 🗄️ Database Models
+
+The application currently contains four main models.
+
+### Invitation
+
+Stores the main wedding information:
+
+```text
+Bride
+Groom
+Couple Photos
+Parents
+Wedding Date
+Venue
+Address
+Google Maps
+Love Story
+Gift Message
+Main Photo
+Intro Video
+Background Music
+RSVP URL
+```
+
+### InvitationEvent
+
+Stores individual ceremony events:
+
+```text
+Invitation
+Title
+Date & Time
+Venue
+Order
+```
+
+### GalleryPhoto
+
+Stores wedding gallery photos:
+
+```text
+Invitation
+Image
+Caption
+Order
+```
+
+### Rsvp
+
+Stores guest attendance responses:
+
+```text
+Invitation
+Name
+Email
+Phone
+Attendance
+Guests Count
+Message
+Created At
+```
+
+These relationships are implemented using Django foreign keys and related managers such as `invitation.events`, `invitation.gallery`, and `invitation.rsvps`.
+
+---
+
+## ⚙️ Admin Panel
+
+The Django Admin panel is used as the main content-management system.
+
+An administrator can manage:
+
+* Bride and groom information
+* Couple photos
+* Parents
+* Wedding date
+* Venue
+* Google Maps
+* Love story
+* Gift message
+* Intro video
+* Background music
+* Ceremony timeline
+* Gallery
+* RSVP responses
+
+The admin interface also includes:
+
+* Inline event management
+* Inline gallery management
+* Inline RSVP viewing
+* Image thumbnails
+* Couple photo previews
+* RSVP summaries
+* Search and filtering
+* Wedding date hierarchy
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Milad-mj22/Wedding_Digital.git
+cd Wedding_Digital
+```
+
+---
+
+### 2. Create a virtual environment
+
+#### Windows
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+#### Linux / macOS
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+---
+
+### 3. Install dependencies
+
+Install the required packages:
+
+```bash
+pip install django pillow whitenoise jdatetime
+```
+
+If a `requirements.txt` file is added to the project, use:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Apply migrations
+
+```bash
+python manage.py migrate
+```
+
+---
+
+### 5. Create an admin user
+
+```bash
+python manage.py createsuperuser
+```
+
+Enter your desired:
+
+```text
+Username
+Email
+Password
+```
+
+---
+
+### 6. Collect static files
+
+For production:
+
+```bash
+python manage.py collectstatic
+```
+
+---
+
+### 7. Start the development server
+
+```bash
+python manage.py runserver
+```
+
+The application will be available at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+The Django project routes the root URL directly to the invitation application, while `/admin/` opens the administration panel.
+
+---
+
+## 🔐 Admin
+
+Open:
+
+```text
+http://127.0.0.1:8000/admin/
+```
+
+After logging in, create an invitation and configure its:
+
+1. Couple information
+2. Photos
+3. Wedding date
+4. Venue
+5. Events
+6. Gallery
+7. Music
+8. Intro video
+9. Gift message
+10. RSVP settings
+
+Once configured, the main invitation is available at:
+
+```text
+http://127.0.0.1:8000/
+```
+
+The current implementation displays the first `Invitation` object as the public invitation.
+
+---
+
+## 🇮🇷 Persian / Shamsi Date Support
+
+The project contains custom Django template filters for converting Gregorian dates into Persian/Jalali dates.
+
+Examples:
+
+```django
+{{ invitation.wedding_date|to_shamsi }}
+```
+
+or:
+
+```django
+{{ invitation.wedding_date|to_shamsi_short }}
+```
+
+There is also support for:
+
+```django
+{{ my_date|shamsi_date }}
+```
+
+and Persian number conversion:
+
+```django
+{{ value|to_persian_numbers }}
+```
+
+The conversion is implemented using `jdatetime`.
+
+---
+
+## 📱 Responsive Design
+
+The invitation is designed for:
+
+* 📱 Mobile
+* 📱 Tablet
+* 💻 Desktop
+* 🖥️ Large displays
+
+The frontend uses responsive CSS with viewport-based sizing, flexible grids and mobile-specific layouts.
+
+---
+
+## 🎯 User Experience
+
+The intended guest flow is:
+
+```text
+┌───────────────────────┐
+│   Digital Invitation  │
+└───────────┬───────────┘
+            │
+            ▼
+     ✉️ Open Envelope
+            │
+            ▼
+       🎬 Intro Video
+            │
+            ▼
+      💍 Wedding Hero
+            │
+            ▼
+       ⏳ Countdown
+            │
+            ▼
+        ❤️ Love Story
+            │
+            ▼
+      📅 Event Timeline
+            │
+            ▼
+       👰 Couple Info
+            │
+            ▼
+       📸 Photo Gallery
+            │
+            ▼
+        🗺️ Wedding Venue
+            │
+            ▼
+       🎁 Gift Message
+            │
+            ▼
+          📝 RSVP
+            │
+            ▼
+        💕 Thank You
+```
+
+---
+
+## 🏗️ Production Configuration
+
+Before deploying to production, update the Django settings.
+
+In particular:
+
+```python
+DEBUG = False
+```
+
+Configure:
+
+```python
+ALLOWED_HOSTS = [
+    "your-domain.com",
+    "www.your-domain.com",
+]
+```
+
+Configure your production:
+
+* Secret key
+* Database
+* Static files
+* Media files
+* HTTPS
+* CSRF trusted origins
+* Secure cookies
+* Web server
+
+The current repository contains development-oriented settings such as `DEBUG=True` and permissive `ALLOWED_HOSTS`, so these should be reviewed before production deployment.
+
+---
+
+## 🌐 Deployment
+
+The project contains `passenger_wsgi.py`, making it suitable for deployment in environments supporting Passenger / WSGI.
+
+For a production server, the typical architecture can be:
+
+```text
+                    ┌──────────────────┐
+                    │      Browser     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │  Web Server /    │
+                    │     Passenger    │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │      Django      │
+                    │ Wedding Digital  │
+                    └───────┬──────────┘
+                            │
+                 ┌──────────┴──────────┐
+                 ▼                     ▼
+          ┌─────────────┐       ┌─────────────┐
+          │  Database   │       │    Media    │
+          │   SQLite    │       │ Photos/Video│
+          └─────────────┘       └─────────────┘
+```
+
+---
+
+## 🔒 Security Notes
+
+Before publishing the application publicly:
+
+* Change the Django `SECRET_KEY`
+* Disable `DEBUG`
+* Restrict `ALLOWED_HOSTS`
+* Configure HTTPS
+* Configure `CSRF_TRUSTED_ORIGINS`
+* Use secure session cookies
+* Protect the admin URL
+* Do not commit private credentials
+* Consider moving production configuration to environment variables
+
+---
+
+## 📌 Current Architecture
+
+The application currently follows a simple Django architecture:
+
+```text
+Django Project
+│
+├── wedding_invitation
+│   ├── Settings
+│   ├── URL Configuration
+│   └── WSGI / ASGI
+│
+└── invitation
+    ├── Models
+    ├── Views
+    ├── Admin
+    ├── Templates
+    ├── Static Assets
+    └── Custom Template Tags
+```
+
+The public invitation is rendered through a Django template and populated dynamically from the `Invitation` model.
+
+---
+
+## 🚧 Future Improvements
+
+Potential improvements for future versions:
+
+* [ ] Multi-invitation support
+* [ ] Unique invitation URLs
+* [ ] Guest-specific personalized links
+* [ ] QR code generation
+* [ ] WhatsApp sharing
+* [ ] RSVP dashboard and statistics
+* [ ] Export RSVP list to Excel
+* [ ] Multiple invitation themes
+* [ ] Theme customization from admin
+* [ ] PostgreSQL support
+* [ ] Environment-based configuration
+* [ ] Automatic image optimization
+* [ ] CDN support for media
+* [ ] Progressive Web App support
+* [ ] Improved accessibility
+* [ ] SEO metadata and Open Graph support
+* [ ] Automatic calendar event generation
+* [ ] Google Calendar integration
+
+---
+
+## 👨‍💻 Author
+
+**Milad Moltaji**
+
+GitHub:
+
+https://github.com/Milad-mj22
+
+---
+
+## 📄 License
+
+This project does not currently specify an open-source license.
+
+If you intend to distribute the project publicly, consider adding an appropriate `LICENSE` file.
+
+---
+
+## ❤️ Project
+
+**Wedding Digital**
+
+> A beautiful digital way to invite people to one of life's most important celebrations.
+
+💍 **Made with Django & ❤️**
